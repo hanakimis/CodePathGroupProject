@@ -22,7 +22,8 @@ class CreateEventViewController: UIViewController {
     }
     
     @IBAction func onTapBackButton(sender: AnyObject) {
-        navigationController!.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
+
     }
 
     /*
