@@ -13,6 +13,8 @@
 		80A68E5B19D15FB700D34365 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80A68E5A19D15FB700D34365 /* Images.xcassets */; };
 		80A68E5E19D15FB700D34365 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80A68E5C19D15FB700D34365 /* LaunchScreen.xib */; };
 		80A68E6A19D15FB700D34365 /* Group_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A68E6919D15FB700D34365 /* Group_ProjectTests.swift */; };
+		80AB88BD19DBB21B0082367C /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB88BC19DBB21B0082367C /* CreateAccountViewController.swift */; };
+		80AB88BF19DBB31D0082367C /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB88BE19DBB31D0082367C /* CreateEventViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		80A68E6319D15FB700D34365 /* Group ProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Group ProjectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80A68E6819D15FB700D34365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80A68E6919D15FB700D34365 /* Group_ProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group_ProjectTests.swift; sourceTree = "<group>"; };
+		80AB88BC19DBB21B0082367C /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		80AB88BE19DBB31D0082367C /* CreateEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 				80A68E5319D15FB700D34365 /* AppDelegate.swift */,
 				80A68E5519D15FB700D34365 /* ViewController.swift */,
 				80A68E5719D15FB700D34365 /* Main.storyboard */,
+				80AB88BE19DBB31D0082367C /* CreateEventViewController.swift */,
+				80AB88BC19DBB21B0082367C /* CreateAccountViewController.swift */,
 				80A68E5A19D15FB700D34365 /* Images.xcassets */,
 				80A68E5C19D15FB700D34365 /* LaunchScreen.xib */,
 				80A68E5119D15FB700D34365 /* Supporting Files */,
@@ -212,8 +218,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80AB88BD19DBB21B0082367C /* CreateAccountViewController.swift in Sources */,
 				80A68E5619D15FB700D34365 /* ViewController.swift in Sources */,
 				80A68E5419D15FB700D34365 /* AppDelegate.swift in Sources */,
+				80AB88BF19DBB31D0082367C /* CreateEventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +413,7 @@
 				80A68E6F19D15FB700D34365 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		80A68E7019D15FB700D34365 /* Build configuration list for PBXNativeTarget "Group ProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +422,7 @@
 				80A68E7219D15FB700D34365 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
