@@ -7,33 +7,63 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class CreateEventViewController: UIViewController {
+class CreateEventViewController: UIViewController, CLLocationManagerDelegate {
 
+    let locationManager = CLLocationManager()
+    
+    
+    @IBOutlet weak var mapView: MKMapView!
+    
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var descriptionTextField: UITextField!
+    @IBOutlet weak var dateTextField: UITextField!
+    
+    @IBOutlet weak var tempMapImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var dp = UIDatePicker()
+        dateTextField.inputView = dp
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+        tempMapImage.hidden = true
 
-        // Do any additional setup after loading the view.
+    }
+    
+    
+    
+
+    @IBAction func onTapBackground(sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func onTapBackButton(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
-
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    
+    
+    
+    
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        
     }
-    */
-
+    
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        
+    }
+    
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 }
