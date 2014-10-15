@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController, UITextViewDelegate {
+class SettingsViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -45,14 +45,17 @@ class SettingsViewController: UIViewController, UITextViewDelegate {
         
         
         UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions.fromRaw(UInt(animationCurve << 16))!, animations: {
-                if (self.selectedTextField <= 1) {
+         /*       if (self.selectedTextField <= 1.0) {
                     self.passwordView.alpha = 0
                 } else {
                     self.profileView.alpha = 0
                     self.passwordView.frame.origin = CGPoint(x: 0.0, y: 74.0)
-                }
+                }*/
             }, completion: nil)
     }
+    
+
+    
     
     func keyboardWillHide(notification: NSNotification!) {
         var userInfo = notification.userInfo!
@@ -64,14 +67,25 @@ class SettingsViewController: UIViewController, UITextViewDelegate {
         var animationCurve = curveValue.integerValue
         
         UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions.fromRaw(UInt(animationCurve << 16))!, animations: {
-            self.nameTextField.frame.origin = CGPoint(x: 0, y: 82)
-            self.emailTextField.frame.origin = CGPoint(x: 0, y: 153)
+         /*   if (self.selectedTextField <= 1) {
+                self.passwordView.alpha = 1
+            } else {
+                self.profileView.alpha = 1
+                self.passwordView.frame.origin = CGPoint(x: 0.0, y: 243.0)
+            }*/
             }, completion: nil)
     }
     
     
-    func textViewDidBeginEditing(textView: UITextView) {
-        selectedTextField = textView.tag
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        selectedTextField = textField.tag
+        println("current sleected Text Field \(selectedTextField)")
+        return true
+    }
+    
+    @IBAction func onTapTextField(sender: UITextField) {
+       // selectedTextField = sender.tag
+        println("current sleected Text Field \(selectedTextField)")
     }
     
     
