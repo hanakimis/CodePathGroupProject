@@ -23,7 +23,6 @@ class CreateAccountViewController: UIViewController {
 
         scrollView.contentSize = CGSize(width: 320, height: 568)
 
-
         //KEYBOARD SCROLL HANDLING
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
@@ -35,7 +34,6 @@ class CreateAccountViewController: UIViewController {
 
     }
     
-
     //CANCEL BUTTON
     @IBAction func cancelCreateAccount(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
@@ -52,7 +50,6 @@ class CreateAccountViewController: UIViewController {
     func keyboardWillShow(notification: NSNotification!) {
         var userInfo = notification.userInfo!
 
-
         var kbSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue().size
         var durationValue = userInfo[UIKeyboardAnimationDurationUserInfoKey] as NSNumber
         var animationDuration = durationValue.doubleValue
@@ -67,7 +64,6 @@ class CreateAccountViewController: UIViewController {
 
     func keyboardWillHide(notification: NSNotification!) {
         var userInfo = notification.userInfo!
-
 
         var kbSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue().size
         var durationValue = userInfo[UIKeyboardAnimationDurationUserInfoKey] as NSNumber
@@ -90,7 +86,6 @@ class CreateAccountViewController: UIViewController {
             ),
             dispatch_get_main_queue(), closure)
     }
-
 
 
     //HIT CREATE ACCOUNT BUTTON
@@ -137,8 +132,6 @@ class CreateAccountViewController: UIViewController {
 
 
     }*/
-
-
     
     
 }
