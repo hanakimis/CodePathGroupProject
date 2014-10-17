@@ -11,17 +11,27 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+
+    //VARS
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var avatarImage: UIImageView!
-
     @IBOutlet weak var initialsImage: UIImageView!
-
     @IBOutlet weak var removePhotoButton: UIButton!
+
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         avatarImage.hidden = false
         initialsImage.hidden = true
+
+        scrollView.contentSize = CGSize(width: 320, height: 568)
+
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+
+
 
 
     }
@@ -45,6 +55,41 @@ class SettingsViewController: UIViewController {
         removePhotoButton.enabled = false
 
 
+    }
+
+
+    func keyboardWillShow(notification: NSNotification!) {
+        var userInfo = notification.userInfo!
+
+        // Get the keyboard height and width from the notification
+        // Size varies depending on OS, language, orientation
+        var kbSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue().size
+        var durationValue = userInfo[UIKeyboardAnimationDurationUserInfoKey] as NSNumber
+        var animationDuration = durationValue.doubleValue
+        var curveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey] as NSNumber
+        var animationCurve = curveValue.integerValue
+
+        UIView.animateWithDuration(animationDuration, delay: 0.15, options: UIViewAnimationOptions.fromRaw(UInt(animationCurve << 16))!, animations: {
+
+            self.scrollView.contentOffset.y = 120
+            }, completion: nil)
+    }
+
+    func keyboardWillHide(notification: NSNotification!) {
+        var userInfo = notification.userInfo!
+
+        // Get the keyboard height and width from the notification
+        // Size varies depending on OS, language, orientation
+        var kbSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue().size
+        var durationValue = userInfo[UIKeyboardAnimationDurationUserInfoKey] as NSNumber
+        var animationDuration = durationValue.doubleValue
+        var curveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey] as NSNumber
+        var animationCurve = curveValue.integerValue
+
+        UIView.animateWithDuration(animationDuration, delay: 0.15, options: UIViewAnimationOptions.fromRaw(UInt(animationCurve << 16))!, animations: {
+
+            self.scrollView.contentOffset.y = 0
+            }, completion: nil)
     }
 
 }
