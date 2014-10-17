@@ -36,7 +36,7 @@ class SignInViewController: UIViewController {
     //HIT SIGN IN BUTTON
     @IBAction func onSignInButton(sender: AnyObject) {
         
-        if (self.emailTextField.text == "email") && (self.passwordTextField.text == "password") {
+        if (self.emailTextField.text == "chelseabriggs@gmail.com") && (self.passwordTextField.text == "password") {
             
             delay(2, closure: { () -> () in
                 self.performSegueWithIdentifier("SignInToTabBarSegue", sender: self)
@@ -53,7 +53,7 @@ class SignInViewController: UIViewController {
         }
             
         else if (self.emailTextField.text == "") || (self.passwordTextField.text == "") {
-            var emptyAlertView = UIAlertView(title: "Email & Password Required", message: "Please enter your email and password", delegate: nil, cancelButtonTitle: "Try again")
+            var emptyAlertView = UIAlertView(title: "Email & Password Required", message: "Please be sure to enter your email and password", delegate: nil, cancelButtonTitle: "OK")
             emptyAlertView.show()
             
             
