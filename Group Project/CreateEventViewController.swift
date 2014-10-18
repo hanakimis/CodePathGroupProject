@@ -14,27 +14,19 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate {
 
     let locationManager = CLLocationManager()
     
+    @IBOutlet weak var eventNameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
-    @IBOutlet weak var mapView: MKMapView!
     
-    @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var descriptionTextField: UITextField!
-    @IBOutlet weak var dateTextField: UITextField!
-    
-    @IBOutlet weak var tempMapImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var dp = UIDatePicker()
-        dateTextField.inputView = dp
-        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
-        tempMapImage.hidden = true
 
     }
+    
     
     
     
@@ -48,21 +40,12 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    
-    
-    
-    
-    
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        
     }
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        
     }
-    
-    
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
