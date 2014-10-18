@@ -1,0 +1,39 @@
+
+var pastEvents = [
+	[ 
+		"event":"JJ's Birthday",
+		"address":"123 Mission St."
+		"response":"Yes",
+		"date":"08/14",
+		"time":"9:00PM",
+		"host":
+	]
+
+	[ 
+		"event":"Housewarming",
+		"address":"20 Alabama St."
+		"response":"Maybe",
+		"date":"08/14",
+		"time":"2:00PM",
+		"host":
+	]
+
+	[ 
+		"event":"Kayak Trip",
+		"address":"Russian River"
+		"response":"Yes",
+		"date":"08/14",
+		"time":"9:00AM",
+		"host":
+	]
+
+	[ 
+		"event":"Snowboard Party",
+		"address":"Truckee"
+		"response":"Yes",
+		"date":"08/14",
+		"time":"9:00AM",
+		"host":
+	]
+
+] 
