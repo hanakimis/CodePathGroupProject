@@ -35,6 +35,7 @@
 		AFA6A7D519F03F0E00E81508 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6A7D419F03F0E00E81508 /* NewUserViewController.swift */; };
 		AFB3858C19F07BF30031CA5E /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB3858B19F07BF30031CA5E /* EventTableViewCell.swift */; };
 		AFB3858E19F07C590031CA5E /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB3858D19F07C590031CA5E /* EventCell.swift */; };
+		AFCA6E0319F2FD11008F3861 /* TableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCA6E0219F2FD11008F3861 /* TableViewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		AFA6A7D419F03F0E00E81508 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		AFB3858B19F07BF30031CA5E /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		AFB3858D19F07C590031CA5E /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		AFCA6E0219F2FD11008F3861 /* TableViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewViewController.swift; path = ../TableViewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 		80A68E5019D15FB700D34365 /* Group Project */ = {
 			isa = PBXGroup;
 			children = (
+				AFCA6E0219F2FD11008F3861 /* TableViewViewController.swift */,
 				80A68E5319D15FB700D34365 /* AppDelegate.swift */,
 				80A68E5519D15FB700D34365 /* ViewController.swift */,
 				80A68E5719D15FB700D34365 /* Main.storyboard */,
@@ -325,6 +328,7 @@
 				803B281A19F48CDE0045C0F4 /* DayViewController.swift in Sources */,
 				803B281619F48C670045C0F4 /* DMLazyScrollView.m in Sources */,
 				6109942919EC9B03003CAEDD /* SignInViewController.swift in Sources */,
+				AFCA6E0319F2FD11008F3861 /* TableViewViewController.swift in Sources */,
 				80AB88BF19DBB31D0082367C /* CreateEventViewController.swift in Sources */,
 				AFA6A7D519F03F0E00E81508 /* NewUserViewController.swift in Sources */,
 				803B280419F46E990045C0F4 /* EditDateTimeViewController.swift in Sources */,
