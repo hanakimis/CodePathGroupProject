@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import AddressBookUI
 
 class ContactsViewController: UIViewController {
 
+    let personPicker: ABPeoplePickerNavigationController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

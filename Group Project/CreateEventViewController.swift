@@ -15,7 +15,6 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     
     @IBOutlet weak var eventNameLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
     
     
     
