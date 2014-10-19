@@ -606,6 +606,10 @@
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="c2a-02-cnB" appends="YES" id="LuH-Xg-uVj"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.96078431372549022" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
@@ -691,6 +695,11 @@
                 <tapGestureRecognizer id="eqY-Q0-Xzp">
                     <connections>
                         <segue destination="cgh-vs-bJh" kind="modal" identifier="addLocationSegue" id="PMm-to-7ip"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="c2a-02-cnB">
+                    <connections>
+                        <segue destination="oDT-zt-D17" kind="modal" identifier="addDateTimeSegue" id="zZE-Rg-ps6"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -1620,7 +1629,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="onCancelButton:" destination="cgh-vs-bJh" eventType="touchUpInside" id="fXy-PE-8er"/>
+                                            <action selector="tapCancelButton:" destination="cgh-vs-bJh" eventType="touchUpInside" id="Z4B-jP-3wP"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1650,6 +1659,74 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LHX-y3-x0w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-954" y="2928"/>
+        </scene>
+        <!--Edit Date Time-->
+        <scene sceneID="MBh-2w-Ez2">
+            <objects>
+                <viewController storyboardIdentifier="EditDateTimeViewController" id="oDT-zt-D17" userLabel="Edit Date Time" customClass="EditDateTimeViewController" customModule="Group_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yTO-Jb-Esv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="P7d-YX-Vos" userLabel="header">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Date &amp; Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FiS-Lg-3M5">
+                                        <rect key="frame" x="98" y="21" width="126" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GmH-Px-YaW">
+                                        <rect key="frame" x="282" y="21" width="30" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" red="1" green="0.53333333329999999" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Giq-3s-hQk">
+                                        <rect key="frame" x="8" y="20" width="39" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.78000000000000003" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapCancelButton:" destination="oDT-zt-D17" eventType="touchUpInside" id="h2r-aE-6s2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="oam-hF-cYm" userLabel="Overview Details">
+                                <rect key="frame" x="0.0" y="63" width="320" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose event location" minimumFontSize="17" id="ulM-SE-ZhW">
+                                        <rect key="frame" x="15" y="8" width="288" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96078431369999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Event" id="t09-gf-QcS">
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="Kzj-3n-98h"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W1M-nd-ZPx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-677" y="2202"/>
         </scene>
     </scenes>
     <resources>

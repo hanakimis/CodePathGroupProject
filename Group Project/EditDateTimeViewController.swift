@@ -1,5 +1,5 @@
 //
-//  EditLocationViewController.swift
+//  EditDateTimeViewController.swift
 //  Group Project
 //
 //  Created by Hana Kim on 10/19/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditLocationViewController: UIViewController {
+class EditDateTimeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,8 @@ class EditLocationViewController: UIViewController {
     }
     
 
-    @IBAction func onCancelButton(sender: AnyObject) {
+    @IBAction func tapCancelButton(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+
 }

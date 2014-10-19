@@ -70,6 +70,14 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, UI
             destinationViewController.transitioningDelegate = self
             editingView = locationUIView
             editingValue.append(locationLabel.text!)
+        case "addDateTimeSegue":
+            var destinationViewController = segue.destinationViewController as EditDateTimeViewController
+            destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+            destinationViewController.transitioningDelegate = self
+            editingView = dateTimeUIView
+            editingValue.append(dayLabel.text!)
+            editingValue.append(timeLabel.text!)
+
         default:
             println("I... am not ready for this segue: \(segue.identifier)")
         }
