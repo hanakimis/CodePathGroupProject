@@ -71,7 +71,7 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, UI
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
         // The value here should be the duration of the animations scheduled in the animationTransition method
-        return 0.4
+        return 0.3
     }
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
@@ -83,24 +83,24 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, UI
             var window = UIApplication.sharedApplication().keyWindow
             var thisFrame = window.convertRect(editingView.frame, fromView: scrollView)
             var copyUIView = UIView(frame: thisFrame)
-            //copyUIView.backgroundColor = UIColor(red: 255/255, green: 136/255, blue: 77/255, alpha: 0.1)
             copyUIView.backgroundColor = UIColor(red: 255/255, green: 136/255, blue: 77/255, alpha: 0.05)
 
         
             
-        /*    var textFrame = window.convertRect(editingView.frame, fromView: editingView)
+        /*  
+            ADDING Text during transition
+            var textFrame = window.convertRect(editingView.frame, fromView: editingView)
             var textLabel = UILabel(frame: textFrame)
             textLabel.text = editingValue[0]
          */
             
-         //   copyImageView.image = clickedImage.image
-            
             window.addSubview(copyUIView)
+            window.backgroundColor = UIColor(white: 0.0, alpha: 1)
             
             containerView.addSubview(toViewController.view)
             toViewController.view.alpha = 0
             
-            UIView.animateWithDuration(0.4, animations: { () -> Void in
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
                 copyUIView.frame.size.width = 320
                 copyUIView.frame.size.height = 62
                 copyUIView.frame.origin = CGPoint(x: 0.0, y: 63.0)
@@ -112,49 +112,22 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, UI
                     copyUIView.removeFromSuperview()
             }
             
-        }/* else {
+        } else {
             var window = UIApplication.sharedApplication().keyWindow
-            var photoViewController = fromViewController as PhotoViewController
-            var copyImageView: UIImageView!
-            var toFrame: CGRect!
-            switch photoViewController.whichImage {
-            case 0:
-                copyImageView = UIImageView(image: imageOne.image)
-                toFrame = imageOne.frame
-            case 1:
-                copyImageView = UIImageView(image: imageTwo.image)
-                toFrame = imageTwo.frame
-            case 2:
-                copyImageView = UIImageView(image: imageThree.image)
-                toFrame = imageThree.frame
-            case 3:
-                copyImageView = UIImageView(image: imageFour.image)
-                toFrame = imageFour.frame
-            case 4:
-                copyImageView = UIImageView(image: imageFive.image)
-                toFrame = imageFive.frame
-            default:
-                copyImageView = UIImageView(image: clickedImage.image)
-                println("there is an error... unexpected image number")
-            }
-            copyImageView.contentMode = UIViewContentMode.ScaleAspectFill
-            copyImageView.clipsToBounds = true
+            var copyUIView = UIView(frame: CGRect(x: 0, y: 63, width: 320, height: 62))
             
-            copyImageView.frame.size.width = 320
-            copyImageView.frame.size.height = 320 * (copyImageView.image!.size.height / copyImageView.image!.size.width)
-            copyImageView.center.y = window.center.y - photoViewController.scrollOffset
-            window.addSubview(copyImageView)
+            window.addSubview(copyUIView)
             
-            fromViewController.view.alpha = 0
-            UIView.animateWithDuration(0.4, animations: { () -> Void in
-                copyImageView.frame = window.convertRect(toFrame, fromView: self.scrollView)
-                
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                copyUIView.frame = window.convertRect(self.editingView.frame, fromView: self.scrollView)
+                fromViewController.view.alpha = 0
+
                 }) { (finished: Bool) -> Void in
                     transitionContext.completeTransition(true)
                     fromViewController.view.removeFromSuperview()
-                    copyImageView.removeFromSuperview()
+                    copyUIView.removeFromSuperview()
             }
-        }*/
+        }
     }
     
     

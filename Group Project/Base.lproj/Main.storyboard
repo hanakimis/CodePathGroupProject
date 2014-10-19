@@ -610,6 +610,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NkS-Jh-rby">
+                                        <rect key="frame" x="8" y="21" width="39" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTapBackButton:" destination="LeP-Mt-JRp" eventType="touchUpInside" id="l7d-YR-aCw"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6rJ-sl-Ek5">
                                         <rect key="frame" x="282" y="21" width="30" height="27"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -629,18 +641,6 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NkS-Jh-rby">
-                                        <rect key="frame" x="8" y="21" width="39" height="27"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="Cancel">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onTapBackButton:" destination="LeP-Mt-JRp" eventType="touchUpInside" id="l7d-YR-aCw"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -1521,29 +1521,25 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GpD-3T-APp">
-                                        <rect key="frame" x="8" y="21" width="39" height="27"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="Cancel">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onCancelButton:" destination="BQa-Hb-GXm" eventType="touchUpInside" id="j11-fO-pXo"/>
-                                            <action selector="onTapBackButton:" destination="BQa-Hb-GXm" eventType="touchUpInside" id="tNx-Gk-Th6"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="csm-Kr-0VO">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6pp-x7-Anf">
                                         <rect key="frame" x="282" y="21" width="30" height="27"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="Next">
-                                            <color key="titleColor" red="1" green="0.50196081399917603" blue="0.24313727021217346" alpha="1" colorSpace="deviceRGB"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" red="1" green="0.53333333333333333" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4Py-lu-ymI">
+                                        <rect key="frame" x="8" y="20" width="39" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.78000000000000003" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="onTapBackButton:" destination="BQa-Hb-GXm" eventType="touchUpInside" id="lmG-RG-EOP"/>
+                                            <action selector="tapCancelButton:" destination="BQa-Hb-GXm" eventType="touchUpInside" id="V6p-4I-gzR"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1565,25 +1561,16 @@
                         </subviews>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.96078431369999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="nWu-nh-cav" appends="YES" id="E8J-lZ-m10"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Add Event" id="xuh-E1-ikD">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="yrP-QI-Pvv"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="doneButton" destination="csm-Kr-0VO" id="9f1-En-ExA"/>
                         <outlet property="nameTextField" destination="fzj-wr-5Z6" id="ca3-vP-mJI"/>
                         <outlet property="titleLabel" destination="j4O-jG-UP3" id="B4I-Ck-AMR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="354-y0-ekb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="nWu-nh-cav">
-                    <connections>
-                        <action selector="onTapBackground:" destination="BQa-Hb-GXm" id="Uql-gy-CCB"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-642" y="2928"/>
         </scene>

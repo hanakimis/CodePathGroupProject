@@ -12,7 +12,7 @@ class EditNameViewController: UIViewController {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var doneButton: UIButton!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,8 @@ class EditNameViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func onCancelButton(sender: AnyObject) {
+
+    @IBAction func tapCancelButton(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
 
