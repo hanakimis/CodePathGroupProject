@@ -85,7 +85,7 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, UI
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
         // The value here should be the duration of the animations scheduled in the animationTransition method
-        return 0.3
+        return 0.4
     }
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
@@ -114,13 +114,13 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, UI
             containerView.addSubview(toViewController.view)
             toViewController.view.alpha = 0
             
-            UIView.animateWithDuration(0.3, animations: { () -> Void in
+            UIView.animateWithDuration(0.4, animations: { () -> Void in
                 copyUIView.frame.size.width = 320
                 copyUIView.frame.size.height = 62
-                copyUIView.frame.origin = CGPoint(x: 0.0, y: 63.0)
+                copyUIView.frame.origin = CGPoint(x: 0, y: 56)
                 copyUIView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
                 toViewController.view.alpha = 1
-                
+
                 }) { (finished: Bool) -> Void in
                     transitionContext.completeTransition(true)
                     copyUIView.removeFromSuperview()
@@ -128,12 +128,16 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, UI
             
         } else {
             var window = UIApplication.sharedApplication().keyWindow
-            var copyUIView = UIView(frame: CGRect(x: 0, y: 63, width: 320, height: 62))
+            var copyUIView = UIView(frame: CGRect(x: 0, y: 56, width: 320, height: 62))
+            copyUIView.backgroundColor = UIColor(red: 255/255, green: 136/255, blue: 77/255, alpha: 0.05)
+
             
             window.addSubview(copyUIView)
             
-            UIView.animateWithDuration(0.3, animations: { () -> Void in
+            UIView.animateWithDuration(0.4, animations: { () -> Void in
                 copyUIView.frame = window.convertRect(self.editingView.frame, fromView: self.scrollView)
+                copyUIView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
+                
                 fromViewController.view.alpha = 0
 
                 }) { (finished: Bool) -> Void in

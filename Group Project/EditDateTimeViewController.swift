@@ -10,10 +10,16 @@ import UIKit
 
 class EditDateTimeViewController: UIViewController {
 
+    @IBOutlet weak var timeButton: UIButton!
+    @IBOutlet weak var dayButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        dayButton.tag = 0
+        timeButton.tag = 1
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,5 +31,13 @@ class EditDateTimeViewController: UIViewController {
     @IBAction func tapCancelButton(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+
+    @IBAction func onTabButton(sender: UIButton) {
+        var selectedTab = sender.tag
+        
+        
+    }
+    
 
 }
