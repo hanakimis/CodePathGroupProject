@@ -49,11 +49,6 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, UI
         performSegueWithIdentifier("editNameSegue", sender: self)
     }
     
-    
-
-    @IBAction func onTapBackground(sender: UITapGestureRecognizer) {
-        self.view.endEditing(true)
-    }
 
     @IBAction func onTapBackButton(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
@@ -88,6 +83,10 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, UI
             var window = UIApplication.sharedApplication().keyWindow
             var thisFrame = window.convertRect(editingView.frame, fromView: scrollView)
             var copyUIView = UIView(frame: thisFrame)
+            //copyUIView.backgroundColor = UIColor(red: 255/255, green: 136/255, blue: 77/255, alpha: 0.1)
+            copyUIView.backgroundColor = UIColor(red: 255/255, green: 136/255, blue: 77/255, alpha: 0.05)
+
+        
             
         /*    var textFrame = window.convertRect(editingView.frame, fromView: editingView)
             var textLabel = UILabel(frame: textFrame)
@@ -105,7 +104,7 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, UI
                 copyUIView.frame.size.width = 320
                 copyUIView.frame.size.height = 62
                 copyUIView.frame.origin = CGPoint(x: 0.0, y: 63.0)
-                
+                copyUIView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
                 toViewController.view.alpha = 1
                 
                 }) { (finished: Bool) -> Void in

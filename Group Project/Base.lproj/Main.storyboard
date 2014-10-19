@@ -657,9 +657,6 @@
                         </subviews>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96078431372549022" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="4zL-OQ-DN0" appends="YES" id="wpC-Mr-i2Z"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Add Event" id="dwr-yy-hoh">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="bdC-ud-1Sb"/>
@@ -682,11 +679,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mru-xG-flr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="4zL-OQ-DN0">
-                    <connections>
-                        <action selector="onTapBackground:" destination="LeP-Mt-JRp" id="EQW-2h-dwS"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <tapGestureRecognizer id="bv5-yV-ifE">
                     <connections>
                         <action selector="onTapForEdit:" destination="LeP-Mt-JRp" id="DT4-gN-Fx4"/>
