@@ -11,6 +11,7 @@
 		611F178419EE197000DAEC15 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611F178319EE197000DAEC15 /* SettingsViewController.swift */; };
 		611F178619EE2B5A00DAEC15 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611F178519EE2B5A00DAEC15 /* ContactsViewController.swift */; };
 		800DFBAB19ED258E006CD470 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 800DFBAA19ED258E006CD470 /* CoreLocation.framework */; };
+		803B27FE19F393F10045C0F4 /* EditNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803B27FD19F393F10045C0F4 /* EditNameViewController.swift */; };
 		80A68E5419D15FB700D34365 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A68E5319D15FB700D34365 /* AppDelegate.swift */; };
 		80A68E5619D15FB700D34365 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A68E5519D15FB700D34365 /* ViewController.swift */; };
 		80A68E5919D15FB700D34365 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80A68E5719D15FB700D34365 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		611F178319EE197000DAEC15 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		611F178519EE2B5A00DAEC15 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		800DFBAA19ED258E006CD470 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		803B27FD19F393F10045C0F4 /* EditNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditNameViewController.swift; sourceTree = "<group>"; };
 		80A68E4E19D15FB700D34365 /* Group Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Group Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80A68E5219D15FB700D34365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80A68E5319D15FB700D34365 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		80A68E5019D15FB700D34365 /* Group Project */ = {
 			isa = PBXGroup;
 			children = (
+				803B27FD19F393F10045C0F4 /* EditNameViewController.swift */,
 				80A68E5319D15FB700D34365 /* AppDelegate.swift */,
 				80A68E5519D15FB700D34365 /* ViewController.swift */,
 				80A68E5719D15FB700D34365 /* Main.storyboard */,
@@ -250,6 +253,7 @@
 			files = (
 				80CB752C19F330F0006516C6 /* SuppliesViewController.swift in Sources */,
 				AFB3858C19F07BF30031CA5E /* EventTableViewCell.swift in Sources */,
+				803B27FE19F393F10045C0F4 /* EditNameViewController.swift in Sources */,
 				80AB88BD19DBB21B0082367C /* CreateAccountViewController.swift in Sources */,
 				AFB3858E19F07C590031CA5E /* EventCell.swift in Sources */,
 				611F178619EE2B5A00DAEC15 /* ContactsViewController.swift in Sources */,

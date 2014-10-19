@@ -11,6 +11,7 @@ import UIKit
 class SuppliesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addSuppliesButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

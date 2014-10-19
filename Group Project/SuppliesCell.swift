@@ -13,17 +13,18 @@ class SuppliesCell: UITableViewCell {
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
+    
+    enum SupplyType: Int {
+        case Food = 1
+        case Drink
+        case Untencil
+        case Entertainment
+    }
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        enum SupplyType: Int {
-            case Food = 1
-            case Drink
-            case Untencil
-            case Entertainment
-        }
-        
-    
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
