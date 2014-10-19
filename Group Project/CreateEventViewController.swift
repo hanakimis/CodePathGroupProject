@@ -46,7 +46,7 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, UI
     
     
     @IBAction func onTapForEdit(sender: AnyObject) {
-        performSegueWithIdentifier("editNameSegue", sender: self)
+        performSegueWithIdentifier("addNameSegue", sender: self)
     }
     
 
@@ -58,12 +58,18 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, UI
     
     override func prepareForSegue(segue: (UIStoryboardSegue!), sender: AnyObject!) {
         switch segue.identifier {
-        case "editNameSegue":
+        case "addNameSegue":
             var destinationViewController = segue.destinationViewController as EditNameViewController
             destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
             destinationViewController.transitioningDelegate = self
             editingView = nameUIView
             editingValue.append(nameLabel.text!)
+        case "addLocationSegue":
+            var destinationViewController = segue.destinationViewController as EditLocationViewController
+            destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+            destinationViewController.transitioningDelegate = self
+            editingView = locationUIView
+            editingValue.append(locationLabel.text!)
         default:
             println("I... am not ready for this segue: \(segue.identifier)")
         }
