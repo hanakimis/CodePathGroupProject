@@ -19,6 +19,8 @@
 		80A68E6A19D15FB700D34365 /* Group_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A68E6919D15FB700D34365 /* Group_ProjectTests.swift */; };
 		80AB88BD19DBB21B0082367C /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB88BC19DBB21B0082367C /* CreateAccountViewController.swift */; };
 		80AB88BF19DBB31D0082367C /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB88BE19DBB31D0082367C /* CreateEventViewController.swift */; };
+		80CB752C19F330F0006516C6 /* SuppliesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CB752B19F330F0006516C6 /* SuppliesViewController.swift */; };
+		80CB752E19F33472006516C6 /* SuppliesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CB752D19F33472006516C6 /* SuppliesCell.swift */; };
 		AFA6A7D519F03F0E00E81508 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6A7D419F03F0E00E81508 /* NewUserViewController.swift */; };
 		AFB3858C19F07BF30031CA5E /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB3858B19F07BF30031CA5E /* EventTableViewCell.swift */; };
 		AFB3858E19F07C590031CA5E /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB3858D19F07C590031CA5E /* EventCell.swift */; };
@@ -51,6 +53,8 @@
 		80A68E6919D15FB700D34365 /* Group_ProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group_ProjectTests.swift; sourceTree = "<group>"; };
 		80AB88BC19DBB21B0082367C /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		80AB88BE19DBB31D0082367C /* CreateEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
+		80CB752B19F330F0006516C6 /* SuppliesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuppliesViewController.swift; sourceTree = "<group>"; };
+		80CB752D19F33472006516C6 /* SuppliesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuppliesCell.swift; sourceTree = "<group>"; };
 		AFA6A7D419F03F0E00E81508 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		AFB3858B19F07BF30031CA5E /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		AFB3858D19F07C590031CA5E /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 				80A68E5319D15FB700D34365 /* AppDelegate.swift */,
 				80A68E5519D15FB700D34365 /* ViewController.swift */,
 				80A68E5719D15FB700D34365 /* Main.storyboard */,
+				80CB752B19F330F0006516C6 /* SuppliesViewController.swift */,
+				80CB752D19F33472006516C6 /* SuppliesCell.swift */,
 				AFB3858D19F07C590031CA5E /* EventCell.swift */,
 				AFB3858B19F07BF30031CA5E /* EventTableViewCell.swift */,
 				AFA6A7D419F03F0E00E81508 /* NewUserViewController.swift */,
@@ -242,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80CB752C19F330F0006516C6 /* SuppliesViewController.swift in Sources */,
 				AFB3858C19F07BF30031CA5E /* EventTableViewCell.swift in Sources */,
 				80AB88BD19DBB21B0082367C /* CreateAccountViewController.swift in Sources */,
 				AFB3858E19F07C590031CA5E /* EventCell.swift in Sources */,
@@ -251,6 +258,7 @@
 				6109942919EC9B03003CAEDD /* SignInViewController.swift in Sources */,
 				80AB88BF19DBB31D0082367C /* CreateEventViewController.swift in Sources */,
 				AFA6A7D519F03F0E00E81508 /* NewUserViewController.swift in Sources */,
+				80CB752E19F33472006516C6 /* SuppliesCell.swift in Sources */,
 				611F178419EE197000DAEC15 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

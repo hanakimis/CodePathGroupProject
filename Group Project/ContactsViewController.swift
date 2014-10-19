@@ -11,32 +11,35 @@ import AddressBookUI
 
 class ContactsViewController: UIViewController {
 
-    let personPicker: ABPeoplePickerNavigationController
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func readFromAddressBook(addressBook: ABAddressBookRef) {
+        
+        /* Get all the people in the address book */
+        let allPeople = ABAddressBookCopyArrayOfAllPeople(addressBook).takeRetainedValue() as NSArray
+        for person: ABRecordRef in allPeople {
+            println(person)
+        }
     }
+    
 
 
     @IBAction func onX(sender: AnyObject) {
-
         dismissViewControllerAnimated(true, completion: nil)
-
     }
-
 
     @IBAction func onTap(sender: UITapGestureRecognizer) {
-
         view.endEditing(true)
-
     }
 
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 
 }
