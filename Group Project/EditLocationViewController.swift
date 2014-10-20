@@ -10,8 +10,6 @@ import UIKit
 
 class EditLocationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-
-    
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
@@ -23,10 +21,6 @@ class EditLocationViewController: UIViewController, UITableViewDelegate, UITable
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 45
-        
-
-        
-        
     }
 
     
@@ -58,9 +52,7 @@ class EditLocationViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell = tableView.dequeueReusableCellWithIdentifier("LocationCell") as LocationCell
-        
         var location = locations[indexPath.row]
-        
         cell.locationLabel.text = (location["description"] as String)
         
         return cell

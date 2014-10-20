@@ -14,7 +14,6 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, UI
 
     let locationManager = CLLocationManager()
     
-    @IBOutlet weak var copyButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var nameUIView: UIView!
     @IBOutlet weak var nameLabel: UILabel!

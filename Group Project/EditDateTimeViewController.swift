@@ -27,13 +27,13 @@ class EditDateTimeViewController: UIViewController {
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         dayViewController  = storyboard.instantiateViewControllerWithIdentifier("DayViewController") as UIViewController
-        timeViewController = storyboard.instantiateViewControllerWithIdentifier("TimeViewController") as UIViewController
+        timeViewController = storyboard.instantiateViewControllerWithIdentifier("TimeInDayViewController") as UIViewController
         tabViewControllers.append(dayViewController)
         tabViewControllers.append(timeViewController)
         dayButton.tag = 0
         timeButton.tag = 1
         
-        selectTab(0)
+        selectTab(1)
     }
 
 
