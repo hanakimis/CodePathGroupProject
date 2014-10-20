@@ -38,9 +38,6 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, UI
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         
-        // functionality I don't think we need for our demo
-        copyButton.hidden = true
-        
 
     }
     
