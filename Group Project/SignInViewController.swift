@@ -50,16 +50,17 @@ class SignInViewController: UIViewController {
                 signAlertView.dismissWithClickedButtonIndex(0, animated: true)
             })
             
-        }
+        } else if (self.emailTextField.text.isEmpty) {
             
-        else if (self.emailTextField.text == "") || (self.passwordTextField.text == "") {
-            var emptyAlertView = UIAlertView(title: "Email & Password Required", message: "Please be sure to enter your email and password", delegate: nil, cancelButtonTitle: "OK")
-            emptyAlertView.show()
+            var noEmailAlertView = UIAlertView(title: "Email Required", message: "Please enter an email address", delegate: nil, cancelButtonTitle: "OK")
+            noEmailAlertView.show()
             
+        } else if (self.passwordTextField.text.isEmpty) {
             
-        }
+            var noPasswordAlertView = UIAlertView(title: "Password Required", message: "Please enter your password", delegate: nil, cancelButtonTitle: "OK")
+            noPasswordAlertView.show()
             
-        else {
+        } else {
             
             var sign2AlertView = UIAlertView(title: "Signing In...", message: nil, delegate: nil, cancelButtonTitle: nil)
             sign2AlertView.show()
