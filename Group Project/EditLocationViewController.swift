@@ -32,16 +32,16 @@ class EditLocationViewController: UIViewController, UITableViewDelegate, UITable
     
     
     @IBAction func textDidChanged(sender: UITextField) {
-        delay(0.5) {
-            var url = NSURL(string: "https://maps.googleapis.com/maps/api/place/autocomplete/json?input=\(self.searchTextField.text)&key=AIzaSyCqVDQiAHTa0LsnKklqbP1iViYRSyzcR5k")
+        delay(1) {
+            
+            var urlSafe = self.searchTextField.text.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
+            var url = NSURL(string: "https://maps.googleapis.com/maps/api/place/autocomplete/json?input=\(urlSafe)&key=AIzaSyCqVDQiAHTa0LsnKklqbP1iViYRSyzcR5k")
             var request = NSURLRequest(URL: url)
             
             NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response, data, error) -> Void in
-                
                 var objects = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as NSDictionary
-                
                 self.locations = objects["predictions"] as [NSDictionary]
-                
+
             }
             
             self.tableView.reloadData()
