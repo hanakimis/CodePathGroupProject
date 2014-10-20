@@ -14,6 +14,11 @@
 		803B27FE19F393F10045C0F4 /* EditNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803B27FD19F393F10045C0F4 /* EditNameViewController.swift */; };
 		803B280419F46E990045C0F4 /* EditDateTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803B280319F46E990045C0F4 /* EditDateTimeViewController.swift */; };
 		803B280619F46ED00045C0F4 /* EditLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803B280519F46ED00045C0F4 /* EditLocationViewController.swift */; };
+		803B281519F48C670045C0F4 /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 803B280C19F48C670045C0F4 /* DateUtil.m */; };
+		803B281619F48C670045C0F4 /* DMLazyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 803B280F19F48C670045C0F4 /* DMLazyScrollView.m */; };
+		803B281719F48C670045C0F4 /* SACalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 803B281119F48C670045C0F4 /* SACalendar.m */; };
+		803B281819F48C670045C0F4 /* SACalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 803B281319F48C670045C0F4 /* SACalendarCell.m */; };
+		803B281A19F48CDE0045C0F4 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803B281919F48CDE0045C0F4 /* DayViewController.swift */; };
 		80A68E5419D15FB700D34365 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A68E5319D15FB700D34365 /* AppDelegate.swift */; };
 		80A68E5619D15FB700D34365 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A68E5519D15FB700D34365 /* ViewController.swift */; };
 		80A68E5919D15FB700D34365 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80A68E5719D15FB700D34365 /* Main.storyboard */; };
@@ -47,6 +52,17 @@
 		803B27FD19F393F10045C0F4 /* EditNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditNameViewController.swift; sourceTree = "<group>"; };
 		803B280319F46E990045C0F4 /* EditDateTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditDateTimeViewController.swift; sourceTree = "<group>"; };
 		803B280519F46ED00045C0F4 /* EditLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditLocationViewController.swift; sourceTree = "<group>"; };
+		803B280719F48C2B0045C0F4 /* Group Project-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Group Project-Bridging-Header.h"; sourceTree = "<group>"; };
+		803B280B19F48C670045C0F4 /* DateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtil.h; sourceTree = "<group>"; };
+		803B280C19F48C670045C0F4 /* DateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtil.m; sourceTree = "<group>"; };
+		803B280E19F48C670045C0F4 /* DMLazyScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLazyScrollView.h; sourceTree = "<group>"; };
+		803B280F19F48C670045C0F4 /* DMLazyScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLazyScrollView.m; sourceTree = "<group>"; };
+		803B281019F48C670045C0F4 /* SACalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACalendar.h; sourceTree = "<group>"; };
+		803B281119F48C670045C0F4 /* SACalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACalendar.m; sourceTree = "<group>"; };
+		803B281219F48C670045C0F4 /* SACalendarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACalendarCell.h; sourceTree = "<group>"; };
+		803B281319F48C670045C0F4 /* SACalendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACalendarCell.m; sourceTree = "<group>"; };
+		803B281419F48C670045C0F4 /* SACalendarConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACalendarConstants.h; sourceTree = "<group>"; };
+		803B281919F48CDE0045C0F4 /* DayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 		80A68E4E19D15FB700D34365 /* Group Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Group Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80A68E5219D15FB700D34365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80A68E5319D15FB700D34365 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +101,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		803B280A19F48C670045C0F4 /* SACalendarPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				803B280B19F48C670045C0F4 /* DateUtil.h */,
+				803B280C19F48C670045C0F4 /* DateUtil.m */,
+				803B280D19F48C670045C0F4 /* DMLazyScrollView */,
+				803B281019F48C670045C0F4 /* SACalendar.h */,
+				803B281119F48C670045C0F4 /* SACalendar.m */,
+				803B281219F48C670045C0F4 /* SACalendarCell.h */,
+				803B281319F48C670045C0F4 /* SACalendarCell.m */,
+				803B281419F48C670045C0F4 /* SACalendarConstants.h */,
+			);
+			path = SACalendarPlugin;
+			sourceTree = "<group>";
+		};
+		803B280D19F48C670045C0F4 /* DMLazyScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				803B280E19F48C670045C0F4 /* DMLazyScrollView.h */,
+				803B280F19F48C670045C0F4 /* DMLazyScrollView.m */,
+			);
+			path = DMLazyScrollView;
+			sourceTree = "<group>";
+		};
 		80A68E4519D15FB700D34365 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +150,7 @@
 				80A68E5319D15FB700D34365 /* AppDelegate.swift */,
 				80A68E5519D15FB700D34365 /* ViewController.swift */,
 				80A68E5719D15FB700D34365 /* Main.storyboard */,
+				803B281919F48CDE0045C0F4 /* DayViewController.swift */,
 				AFA6A7D419F03F0E00E81508 /* NewUserViewController.swift */,
 				611F178519EE2B5A00DAEC15 /* ContactsViewController.swift */,
 				611F178319EE197000DAEC15 /* SettingsViewController.swift */,
@@ -126,6 +167,8 @@
 				80A68E5A19D15FB700D34365 /* Images.xcassets */,
 				80A68E5C19D15FB700D34365 /* LaunchScreen.xib */,
 				80A68E5119D15FB700D34365 /* Supporting Files */,
+				803B280719F48C2B0045C0F4 /* Group Project-Bridging-Header.h */,
+				803B280A19F48C670045C0F4 /* SACalendarPlugin */,
 			);
 			path = "Group Project";
 			sourceTree = "<group>";
@@ -258,20 +301,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				803B280619F46ED00045C0F4 /* EditLocationViewController.swift in Sources */,
+				803B281519F48C670045C0F4 /* DateUtil.m in Sources */,
 				80CB752C19F330F0006516C6 /* SuppliesViewController.swift in Sources */,
 				AFB3858C19F07BF30031CA5E /* EventTableViewCell.swift in Sources */,
 				803B27FE19F393F10045C0F4 /* EditNameViewController.swift in Sources */,
 				80AB88BD19DBB21B0082367C /* CreateAccountViewController.swift in Sources */,
+				803B281819F48C670045C0F4 /* SACalendarCell.m in Sources */,
 				AFB3858E19F07C590031CA5E /* EventCell.swift in Sources */,
 				611F178619EE2B5A00DAEC15 /* ContactsViewController.swift in Sources */,
 				80A68E5619D15FB700D34365 /* ViewController.swift in Sources */,
 				80A68E5419D15FB700D34365 /* AppDelegate.swift in Sources */,
+				803B281A19F48CDE0045C0F4 /* DayViewController.swift in Sources */,
+				803B281619F48C670045C0F4 /* DMLazyScrollView.m in Sources */,
 				6109942919EC9B03003CAEDD /* SignInViewController.swift in Sources */,
 				80AB88BF19DBB31D0082367C /* CreateEventViewController.swift in Sources */,
 				AFA6A7D519F03F0E00E81508 /* NewUserViewController.swift in Sources */,
 				803B280419F46E990045C0F4 /* EditDateTimeViewController.swift in Sources */,
 				80CB752E19F33472006516C6 /* SuppliesCell.swift in Sources */,
 				611F178419EE197000DAEC15 /* SettingsViewController.swift in Sources */,
+				803B281719F48C670045C0F4 /* SACalendar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +442,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Group Project/Info.plist";
@@ -401,6 +450,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Group Project/Group Project-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -408,6 +459,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Group Project/Info.plist";
@@ -415,6 +467,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Group Project/Group Project-Bridging-Header.h";
 			};
 			name = Release;
 		};
