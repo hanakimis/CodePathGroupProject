@@ -9,7 +9,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
 
     //VARS
@@ -30,24 +30,35 @@ class SettingsViewController: UIViewController {
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-
-
-
-
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-
     }
 
+    
+    @IBAction func onUpdatePhoto(sender: AnyObject) {
+        var imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        imagePickerController.delegate = self
+        self.presentViewController(imagePickerController, animated: true, completion: nil)
+    }
 
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    
+        var tempImage:UIImage = info[UIImagePickerControllerOriginalImage] as UIImage
+        initialsImage.image = tempImage
+        
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    
     @IBAction func onTap(sender: UITapGestureRecognizer) {
-
         view.endEditing(true)
-
     }
 
+    
+    
     @IBAction func onRemoveImage(sender: AnyObject) {
 
         avatarImage.hidden = true
@@ -91,5 +102,7 @@ class SettingsViewController: UIViewController {
             self.scrollView.contentOffset.y = 0
             }, completion: nil)
     }
+    
+    
 
 }
