@@ -40,6 +40,7 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
     @IBAction func onUpdatePhoto(sender: AnyObject) {
         var imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        //imagePickerController.sourceType = UIImagePickerControllerSourceType.Camera
         imagePickerController.delegate = self
         self.presentViewController(imagePickerController, animated: true, completion: nil)
     }

@@ -38,23 +38,26 @@ class EditLocationViewController: UIViewController, UITableViewDelegate, UITable
     func updateTableStuff() {
         var urlSafe = self.searchTextField.text.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
          var url = NSURL(string: "https://maps.googleapis.com/maps/api/place/autocomplete/json?input=\(urlSafe)&key=AIzaSyCqVDQiAHTa0LsnKklqbP1iViYRSyzcR5k")
-
         var request = NSURLRequest(URL: url)
-        
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response, data, error) -> Void in
-            
             if error != nil {
+                println("error: \(error.description)")
                 
             } else  {
                 var objects = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as NSDictionary
             
                 self.locations = objects["predictions"] as [NSDictionary]
+                self.tableView.reloadData()
             }
         }
         
-        self.tableView.reloadData()
     }
 
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as LocationCell
+        var place = cell.locationLabel.text!
+        println("location \(place)")
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return locations.count
