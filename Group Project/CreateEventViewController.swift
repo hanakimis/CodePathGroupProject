@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class CreateEventViewController: UIViewController, CLLocationManagerDelegate, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning  {
+class CreateEventViewController: UIViewController, CLLocationManagerDelegate, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning, EditNameViewControllerDelegate  {
 
     let locationManager = CLLocationManager()
     
@@ -36,8 +36,6 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, UI
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
-        
-
     }
     
     
@@ -50,7 +48,9 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, UI
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    
+    func returnWithName(name:String) {
+        nameLabel.text = name
+    }
     
     override func prepareForSegue(segue: (UIStoryboardSegue!), sender: AnyObject!) {
         switch segue.identifier {
@@ -58,21 +58,26 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, UI
             var destinationViewController = segue.destinationViewController as EditNameViewController
             destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
             destinationViewController.transitioningDelegate = self
+            destinationViewController.delegate = self
+            if (nameLabel.text != "Enter event name") {
+                destinationViewController.nameValue = nameLabel.text!
+            }
+            
             editingView = nameUIView
-            editingValue.append(nameLabel.text!)
+            //editingValue.append(nameLabel.text!)
         case "addLocationSegue":
             var destinationViewController = segue.destinationViewController as EditLocationViewController
             destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
             destinationViewController.transitioningDelegate = self
             editingView = locationUIView
-            editingValue.append(locationLabel.text!)
+            //editingValue.append(locationLabel.text!)
         case "addDateTimeSegue":
             var destinationViewController = segue.destinationViewController as EditDateTimeViewController
             destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
             destinationViewController.transitioningDelegate = self
             editingView = dateTimeUIView
-            editingValue.append(dayLabel.text!)
-            editingValue.append(timeLabel.text!)
+            //editingValue.append(dayLabel.text!)
+            //editingValue.append(timeLabel.text!)
 
         default:
             println("I... am not ready for this segue: \(segue.identifier)")
@@ -140,10 +145,16 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, UI
                     transitionContext.completeTransition(true)
                     fromViewController.view.removeFromSuperview()
                     copyUIView.removeFromSuperview()
+                    self.checkStyles()
             }
         }
     }
     
+    func checkStyles() {
+        if (nameLabel.text != "Enter event name") {
+            nameLabel.textColor = UIColor(white: 0.2, alpha: 1.0)
+        }
+    }
     
     func animationControllerForPresentedController(presented: UIViewController!, presentingController presenting: UIViewController!, sourceController source: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
         isPresenting = true
@@ -154,13 +165,6 @@ class CreateEventViewController: UIViewController, CLLocationManagerDelegate, UI
         isPresenting = false
         return self
     }
-    
-    
-    
-    
-    
-    
-    
     
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
