@@ -72,14 +72,8 @@ class SignInViewController: UIViewController {
                 var wrongAlertView = UIAlertView(title: "Sign In Failed", message: "Incorrect email or password", delegate: nil, cancelButtonTitle: "Try again")
                 wrongAlertView.show()
             })
-            
-            
         }
-
-        
     }
-    
-    
     
     
     //DELAY FUNCTION
