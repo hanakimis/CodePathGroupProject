@@ -12,6 +12,9 @@ class EventViewController: UIViewController {
 
     @IBOutlet weak var mapImage: UIImageView!
     @IBOutlet weak var headerUIView: UIView!
+    
+    var guests: [Int]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
