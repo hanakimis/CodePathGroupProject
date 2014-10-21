@@ -10,7 +10,57 @@ import UIKit
 
 class TableViewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var tableView: UITableView!
+
+
+
+    @IBOutlet weak var tableView: UITableView!    
+    var currentEvents = [
+        [
+            "title": "First section",
+            "events": [
+                [
+                    "event":"JJ's BBQ",
+                    "address":"Mission",
+                    "response":"Yes",
+                    "date":"6/11",
+                    "time":"9:00PM"
+                ],
+                [
+                    "event":"Snowboarding",
+                    "address":"Mission",
+                    "response":"Invited",
+                    "date":"7/11",
+                    "time":"9:00PM"
+                ],
+                [
+                    "event":"stuff",
+                    "address":"Mission",
+                    "response":"No",
+                    "date":"8/11",
+                    "time":"9:00PM"
+                ]
+            ]
+        ],
+        [
+            "title": "second section 2",
+            "events": [
+                [
+                    "event":"Happy hour",
+                    "address":"Rincon hill",
+                    "response":"Yes",
+                    "date":"6/14",
+                    "time":"6:00PM"
+                ],
+                [
+                    "event":"Shopping",
+                    "address":"Union square",
+                    "response":"Invited",
+                    "date":"7/14",
+                    "time":"2:00PM"
+                ]
+            ]
+        ]
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +78,8 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
 
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        let events = currentEvents[section]["events"] as NSArray
+        return events.count
         //when link to external file
         //return pastEvents.count
     }
@@ -37,42 +88,41 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
 
         var cell = tableView.dequeueReusableCellWithIdentifier("EventCell") as EventCell
 
-        //when link to external file
-        //var pastEvent = pastEvents[indexPath.row]
-//        cell.eventName.text = "event"
-//        cell.addressLabel.text = "address"
-//        cell.responseLabel.text = "response"
-//        cell.dateLabel.text = "date"
-//        cell.timeLabel.text = "time"
-
-        cell.eventName.text = "JJ's"
-        cell.addressLabel.text = "Mission"
-        cell.responseLabel.text = "Yes"
-        cell.dateLabel.text = "9/20"
-        cell.timeLabel.text = "5:00 PM"
-
+        let events = currentEvents[indexPath.section]["events"] as Array<Dictionary<String, String>>
+        var currentEvent = events[indexPath.row]
+//
+        cell.eventName.text = currentEvent["event"]
+        cell.addressLabel.text = currentEvent["address"]
+        cell.responseLabel.text = currentEvent["response"]
+        cell.dateLabel.text = currentEvent["date"]
+        cell.timeLabel.text = currentEvent["time"]
+        
+        if (cell.responseLabel.text == "Invited"){
+            println("test")
+        
+        }
+        
         return cell
 
     }
+    
 
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-
-        println("selected")
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return currentEvents.count
     }
 
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
         //top-level header
-        var headerView = UIView(frame: CGRect(x: 10, y: 0, width: 310, height: 100))
+        var headerView = UIView(frame: CGRect(x: 10, y: 0, width: 310, height: 30))
         headerView.backgroundColor = UIColor(white: 0.8, alpha: 0.8)
 
         //add label
-        var label = UILabel(frame: headerView.frame)
-        label.text = "Section"
-        label.font = UIFont.systemFontOfSize(20)
 
+        var label = UILabel(frame: headerView.frame)
+        label.text = currentEvents[section]["title"] as String?
+        label.font = UIFont.boldSystemFontOfSize(14)
+        
         headerView.addSubview(label)
 
         return headerView
@@ -80,8 +130,16 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
     }
 
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 100
+        return 30
     }
+
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        println("selected")
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+
+
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated
