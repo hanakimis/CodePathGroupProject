@@ -8,11 +8,16 @@
 
 import UIKit
 
+protocol EditLocationViewControllerDelegate {
+    func returnWithLocation(location:String)
+}
+
 class EditLocationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
+    var delegate: EditLocationViewControllerDelegate?
     var locations: [NSDictionary] = []
     var myTimer : NSTimer?
     
@@ -26,6 +31,7 @@ class EditLocationViewController: UIViewController, UITableViewDelegate, UITable
         searchTextField.becomeFirstResponder()
     }
 
+    
     @IBAction func tests(sender: UITextField) {
         myTimer?.invalidate()
         myTimer = NSTimer.scheduledTimerWithTimeInterval(0.5,
@@ -34,11 +40,13 @@ class EditLocationViewController: UIViewController, UITableViewDelegate, UITable
             userInfo: nil,
             repeats: false)
     }
+   
     
     func updateTableStuff() {
         var urlSafe = self.searchTextField.text.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-         var url = NSURL(string: "https://maps.googleapis.com/maps/api/place/autocomplete/json?input=\(urlSafe)&key=AIzaSyCqVDQiAHTa0LsnKklqbP1iViYRSyzcR5k")
+        var url = NSURL(string: "https://maps.googleapis.com/maps/api/place/autocomplete/json?input=\(urlSafe)&key=AIzaSyCqVDQiAHTa0LsnKklqbP1iViYRSyzcR5k")
         var request = NSURLRequest(URL: url)
+        
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response, data, error) -> Void in
             if error != nil {
                 println("error: \(error.description)")
@@ -50,14 +58,18 @@ class EditLocationViewController: UIViewController, UITableViewDelegate, UITable
                 self.tableView.reloadData()
             }
         }
-        
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var cell = tableView.cellForRowAtIndexPath(indexPath) as LocationCell
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as LocationCell!
         var place = cell.locationLabel.text!
-        println("location \(place)")
+        
+        delegate?.returnWithLocation("asdfasdf")
+        
+        dismissViewControllerAnimated(true, completion: nil)
     }
+
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return locations.count
@@ -73,6 +85,7 @@ class EditLocationViewController: UIViewController, UITableViewDelegate, UITable
         return cell
     }
 
+    
     @IBAction func tapCancelButton(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
