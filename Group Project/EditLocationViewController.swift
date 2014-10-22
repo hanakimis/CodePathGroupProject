@@ -60,12 +60,12 @@ class EditLocationViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
 
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var cell = tableView.cellForRowAtIndexPath(indexPath) as LocationCell!
         var place = cell.locationLabel.text!
         
-        delegate?.returnWithLocation("asdfasdf")
-        
+        delegate?.returnWithLocation(place)
         dismissViewControllerAnimated(true, completion: nil)
     }
 

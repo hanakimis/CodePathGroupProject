@@ -2183,6 +2183,10 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="amPMbutton" destination="dbi-We-Tm8" id="Gt3-2q-lSn"/>
+                        <outlet property="hourLabel" destination="4Fv-g8-wia" id="9xq-mc-8Ct"/>
+                        <outlet property="hourSelectorView" destination="sU3-ST-46Q" id="dae-rI-XhM"/>
+                        <outlet property="minuteLabel" destination="8TX-EP-EM1" id="YJW-SP-1lj"/>
+                        <outlet property="minuteSelectorView" destination="BJ1-EK-NdN" id="Xjt-OW-T8r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YNn-9T-xPA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2191,7 +2195,11 @@
                         <action selector="panMinutes:" destination="m5Q-JS-wB0" id="n6l-wI-nnh"/>
                     </connections>
                 </panGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="SVE-Vk-29E" userLabel="hour pan gesture"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="SVE-Vk-29E" userLabel="hour pan gesture">
+                    <connections>
+                        <action selector="panHours:" destination="m5Q-JS-wB0" id="rQb-Lv-kXt"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1534" y="3656"/>
         </scene>

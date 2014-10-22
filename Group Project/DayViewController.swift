@@ -10,6 +10,12 @@ import UIKit
 
 class DayViewController: UIViewController, SACalendarDelegate {
 
+    var day = 1
+    var month = 1
+    var year = 2014
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +23,8 @@ class DayViewController: UIViewController, SACalendarDelegate {
         calendar.delegate = self
         view.addSubview(calendar)
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

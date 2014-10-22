@@ -45,7 +45,6 @@ class CreateEventViewController: UIViewController, UIViewControllerTransitioning
     }
     
     func returnWithLocation(location:String) {
-        println("asdfds")
         locationLabel.text = location
     }
     
@@ -67,6 +66,8 @@ class CreateEventViewController: UIViewController, UIViewControllerTransitioning
             var destinationViewController = segue.destinationViewController as EditLocationViewController
             destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
             destinationViewController.transitioningDelegate = self
+            destinationViewController.delegate = self
+
             editingView = locationUIView
         case "addDateTimeSegue":
             var destinationViewController = segue.destinationViewController as EditDateTimeViewController
@@ -148,6 +149,10 @@ class CreateEventViewController: UIViewController, UIViewControllerTransitioning
     func checkStyles() {
         if (nameLabel.text != "Enter event name") {
             nameLabel.textColor = UIColor(white: 0.2, alpha: 1.0)
+        }
+        
+        if (locationLabel.text != "Search event location") {
+            locationLabel.textColor = UIColor(white: 0.2, alpha: 1.0)
         }
     }
     
