@@ -1,19 +1,19 @@
 //
-//  ContactsViewController.swift
+//  SearchViewController.swift
 //  Group Project
 //
-//  Created by Jessica Jarvis on 10/14/14.
+//  Created by Jessica Jarvis on 10/21/14.
 //  Copyright (c) 2014 Hana-Ida-Jessica. All rights reserved.
 //
 
 import UIKit
-import AddressBookUI
 
-class ContactsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //VARS
     @IBOutlet weak var tableView: UITableView!
+    
+    var results: [NSDictionary] = []
     
     var users = [
         [
@@ -87,19 +87,28 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
             "email":"wesdearborn@gmail.com"
         ],
     ]
+
+
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 84
-        
-        
-
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    
+    
+    @IBAction func onEnteringFriend(sender: AnyObject) {
+        
+        self.results = objects["predictions"] as [NSDictionary]
+        
+    }
     
     //TABLE VIEW FUNCTIONS
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -107,7 +116,7 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
+        
         
         var cell = tableView.dequeueReusableCellWithIdentifier("ContactsTableViewCell") as ContactsTableViewCell
         
@@ -131,12 +140,5 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
 
-    
-
-
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
 
 }
