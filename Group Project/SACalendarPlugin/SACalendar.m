@@ -108,8 +108,8 @@
 }
 
 - (void) observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object change:(NSDictionary*)change context:(void*)context {
-    if (nil != _delegate && [_delegate respondsToSelector:@selector(SACalendar:didDisplayCalendarForMonth:year:)]) {
-        [_delegate SACalendar:self didDisplayCalendarForMonth:month year:year];
+    if (nil != _delegate && [_delegate respondsToSelector:@selector(SA2Calendar:didDisplayCalendarForMonth:year:)]) {
+        [_delegate SA2Calendar:self didDisplayCalendarForMonth:month year:year];
     }
 }
 
@@ -179,8 +179,8 @@
         }
         state = LOADSTATEPREVIOUS;
         
-        if (nil != _delegate && [_delegate respondsToSelector:@selector(SACalendar:didDisplayCalendarForMonth:year:)]) {
-            [_delegate SACalendar:self didDisplayCalendarForMonth:month year:year];
+        if (nil != _delegate && [_delegate respondsToSelector:@selector(SA2Calendar:didDisplayCalendarForMonth:year:)]) {
+            [_delegate SA2Calendar:self didDisplayCalendarForMonth:month year:year];
         }
     }
     
@@ -417,8 +417,8 @@
         
         int dateSelected = (int)indexPath.row - firstDay + 1;
         
-        if (nil != _delegate && [_delegate respondsToSelector:@selector(SACalendar:didSelectDate:month:year:)]) {
-            [_delegate SACalendar:self didSelectDate:dateSelected month:month year:year];
+        if (nil != _delegate && [_delegate respondsToSelector:@selector(SA2Calendar:didSelectDate:month:year:)]) {
+            [_delegate SA2Calendar:self didSelectDate:dateSelected month:month year:year];
         }
         
         selectedRow = (int)indexPath.row;

@@ -8,7 +8,8 @@
 
 import UIKit
 
-class CreateEventViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning, EditNameViewControllerDelegate, EditLocationViewControllerDelegate  {
+class CreateEventViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning, EditNameViewControllerDelegate, EditLocationViewControllerDelegate,
+    EditDateTimeViewControllerDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var nameUIView: UIView!
@@ -48,6 +49,11 @@ class CreateEventViewController: UIViewController, UIViewControllerTransitioning
         locationLabel.text = location
     }
     
+    func returnWithDateTime(dateTime:[String:String]) {
+        dayLabel.text = dateTime["date"]
+        timeLabel.text = dateTime["time"]
+    }
+    
     override func prepareForSegue(segue: (UIStoryboardSegue!), sender: AnyObject!) {
         switch segue.identifier {
         case "addNameSegue":
@@ -73,6 +79,7 @@ class CreateEventViewController: UIViewController, UIViewControllerTransitioning
             var destinationViewController = segue.destinationViewController as EditDateTimeViewController
             destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
             destinationViewController.transitioningDelegate = self
+            destinationViewController.delegate = self
             editingView = dateTimeUIView
 
         default:

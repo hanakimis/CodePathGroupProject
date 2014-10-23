@@ -8,7 +8,12 @@
 
 import UIKit
 
-class EditDateTimeViewController: UIViewController {
+protocol EditDateTimeViewControllerDelegate {
+    func returnWithDateTime(dateTime:[String:String])
+}
+
+
+class EditDateTimeViewController: UIViewController, TimeInDayViewControllerDelegate, DayViewControllerDelegate {
 
     @IBOutlet weak var timeButton: UIButton!
     @IBOutlet weak var dayButton: UIButton!
@@ -16,8 +21,9 @@ class EditDateTimeViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var contentView: UIView!
     
-    var dayViewController: UIViewController!
-    var timeViewController: UIViewController!
+    var delegate: EditDateTimeViewControllerDelegate?
+    var dayViewController: DayViewController!
+    var timeViewController: TimeInDayViewController!
     var currentTab = 0
     
     var tabViewControllers = [UIViewController]()
@@ -26,8 +32,10 @@ class EditDateTimeViewController: UIViewController {
         super.viewDidLoad()
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        dayViewController  = storyboard.instantiateViewControllerWithIdentifier("DayViewController") as UIViewController
-        timeViewController = storyboard.instantiateViewControllerWithIdentifier("TimeInDayViewController") as UIViewController
+        dayViewController  = storyboard.instantiateViewControllerWithIdentifier("DayViewController") as DayViewController
+        dayViewController.delegate = self
+        timeViewController = storyboard.instantiateViewControllerWithIdentifier("TimeInDayViewController") as TimeInDayViewController
+        timeViewController.delegate = self
         tabViewControllers.append(dayViewController)
         tabViewControllers.append(timeViewController)
         dayButton.tag = 0
@@ -36,11 +44,21 @@ class EditDateTimeViewController: UIViewController {
         selectTab(1)
     }
 
-
+    func returnWithTime(returnTime:String) {
+        timeLabel.text = returnTime
+    }
+    func returnWithDate(returnDay:String) {
+        dayLabel.text = returnDay
+    }
+    
     @IBAction func tapCancelButton(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func onDone(sender: AnyObject) {
+        delegate?.returnWithDateTime(["date":dayLabel.text!, "time":timeLabel.text!])
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 
     @IBAction func onTabButton(sender: UIButton) {
         if (currentTab != sender.tag) {

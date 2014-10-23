@@ -76,7 +76,7 @@
  *  @param month    The new month displayed
  *  @param year     The new year displayed
  */
--(void) SACalendar:(SACalendar*)calendar didDisplayCalendarForMonth:(int)month year:(int)year;
+-(void) SA2Calendar:(SACalendar*)calendar didDisplayCalendarForMonth:(int)month year:(int)year;
 
 /**
  *  This function get called when a specific date is selected
@@ -86,7 +86,7 @@
  *  @param month    The month selected
  *  @param year     The year selected
  */
--(void) SACalendar:(SACalendar*)calendar didSelectDate:(int)day month:(int)month year:(int)year;
+-(void) SA2Calendar:(SACalendar*)calendar didSelectDate:(int)day month:(int)month year:(int)year;
 
 
 @end

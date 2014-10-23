@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol TimeInDayViewControllerDelegate {
+    func returnWithTime(returnTime:String)
+}
+
 class TimeInDayViewController: UIViewController {
 
     @IBOutlet weak var minuteLabel: UILabel!
@@ -17,13 +21,16 @@ class TimeInDayViewController: UIViewController {
     @IBOutlet weak var minuteSelectorView: UIView!
     @IBOutlet weak var hourSelectorView: UIView!
     
-    var hours = 1
-    var minutes = 0
+    var hours = "08"
+    var minutes = "00"
+    var amPM = "PM"
     var isPM:Bool = true
     var minuteStart:CGFloat = 35.0
     var hourStart:CGFloat = 35.0
     var minLoc = 35.0
     var time = ""
+    var delegate: TimeInDayViewControllerDelegate?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,10 +78,13 @@ class TimeInDayViewController: UIViewController {
                 hourLabel.text = "12"
             }
             
-            updateTime()
+            
             
         } else if panGestureRecognizer.state == UIGestureRecognizerState.Ended {
             // animate to right spot
+            hours = hourLabel.text!
+
+            updateTime()
         }
     }
     
@@ -120,23 +130,30 @@ class TimeInDayViewController: UIViewController {
                 minuteLabel.text = "55"
             }
             
-            updateTime()
+            
             
         } else if panGestureRecognizer.state == UIGestureRecognizerState.Ended {
             // animate to right spot
+            minutes = minuteLabel.text!
+            updateTime()
         }
     }
     
     @IBAction func toggleAMPM(sender: UIButton) {
         if (sender.titleLabel?.text == "PM") {
            sender.setTitle("AM", forState: UIControlState.Normal)
+            amPM = "AM"
         } else {
             sender.setTitle("PM", forState: UIControlState.Normal)
+            amPM = "PM"
         }
+       
+        
     }
     
     func updateTime() {
-        //time = hourLabel.text! + minuteLabel.text! + amPMbutton.titleLabel?.text!
+        time = "\(hours) : \(minutes) \(amPM)"
+        delegate?.returnWithTime(time)
     }
     
     
