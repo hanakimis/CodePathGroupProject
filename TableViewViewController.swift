@@ -72,6 +72,18 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
 
         override func viewDidLoad() {
             super.viewDidLoad()
+            
+            var defaults = NSUserDefaults.standardUserDefaults()
+            var newUser = defaults.integerForKey("new_user")
+
+            // 1 is new, 0 is existing
+            if ( newUser == 1 ) {
+                tableView.alpha = 0
+                println("new")
+            } else {
+                println("easdfasdfasdfxisitng")
+
+            }
 
             tableView.delegate = self
             tableView.dataSource = self
@@ -156,13 +168,14 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
             eventViewController.detailEvent = event
         }
 
-        //        func tableView(tableView: UITableView, didSselectRowAtIndexPath indexPath: NSIndexPath) {
-        //
-        ////            println("selected")
-        ////            tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        //
-        //
-        //        }
+        
+        func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
+        //            println("selected")
+                    tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+                }
+
 
         override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
