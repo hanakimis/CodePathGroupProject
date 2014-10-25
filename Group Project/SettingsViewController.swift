@@ -45,9 +45,32 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
         configureNewPasswordTextField()
         configureConfirmPasswordTextField()
 
-
-
+        
+        
+        
     }
+    
+    //FUNCS FOR PLACEHOLDER TEXT
+    func configureNameTextField() {
+        nameTextField.placeholder = NSLocalizedString("name", comment: "")
+    }
+    
+    func configureEmailTextField() {
+        emailTextField.placeholder = NSLocalizedString("email", comment: "")
+    }
+    func configureOldPasswordTextField() {
+        oldPasswordTextField.placeholder = NSLocalizedString("old password", comment: "")
+    }
+    func configureNewPasswordTextField() {
+        newPasswordTextField.placeholder = NSLocalizedString("new password", comment: "")
+    }
+    func configureConfirmPasswordTextField() {
+        confirmPasswordTextField.placeholder = NSLocalizedString("confirm password", comment: "")
+    }
+    
+    
+    
+    
 
     //FUNCS FOR PLACEHOLDER TEXT
     func configureNameTextField() {
