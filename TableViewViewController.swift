@@ -69,7 +69,7 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
                 ]
             ]
         ]
-        
+
         override func viewDidLoad() {
             super.viewDidLoad()
 
@@ -84,14 +84,13 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
         }
 
 
-        
         func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             let events = currentEvents[section]["events"] as NSArray
             return events.count
             //when link to external file
             //return pastEvents.count
         }
-        
+
         func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
             var cell = tableView.dequeueReusableCellWithIdentifier("EventCell") as EventCell
