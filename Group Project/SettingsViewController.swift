@@ -17,9 +17,15 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var initialsImage: UIImageView!
     @IBOutlet weak var removePhotoButton: UIButton!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var oldPasswordTextField: UITextField!
+    @IBOutlet weak var newPasswordTextField: UITextField!
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
 
 
 
+    //VIEW DID LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,15 +34,49 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
 
         scrollView.contentSize = CGSize(width: 320, height: 568)
 
+        //KEYBOARD STUFFS
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+
+        //LOADING CONFIGURING OF PLACEHOLDERS
+        configureNameTextField()
+        configureEmailTextField()
+        configureOldPasswordTextField()
+        configureNewPasswordTextField()
+        configureConfirmPasswordTextField()
+
+
+
     }
+
+    //FUNCS FOR PLACEHOLDER TEXT
+    func configureNameTextField() {
+        nameTextField.placeholder = NSLocalizedString("name", comment: "")
+    }
+
+    func configureEmailTextField() {
+        emailTextField.placeholder = NSLocalizedString("email", comment: "")
+    }
+    func configureOldPasswordTextField() {
+        oldPasswordTextField.placeholder = NSLocalizedString("old password", comment: "")
+    }
+    func configureNewPasswordTextField() {
+        newPasswordTextField.placeholder = NSLocalizedString("new password", comment: "")
+    }
+    func configureConfirmPasswordTextField() {
+        confirmPasswordTextField.placeholder = NSLocalizedString("confirm password", comment: "")
+    }
+
+
+
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
     
+    //IMAGE PICKER
     @IBAction func onUpdatePhoto(sender: AnyObject) {
         var imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
@@ -53,13 +93,13 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
 
-    
+    //KEYBOARD DISMISS TAP
     @IBAction func onTap(sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
 
     
-    
+    //REMOVE IMAGE
     @IBAction func onRemoveImage(sender: AnyObject) {
 
         avatarImage.hidden = true
@@ -70,6 +110,7 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
     }
 
 
+    //ADJUSTING SCROLL FOR KEYBOARD
     func keyboardWillShow(notification: NSNotification!) {
         var userInfo = notification.userInfo!
 
