@@ -171,13 +171,13 @@ class CreateEventViewController: UIViewController, UIViewControllerTransitioning
                 copyUIView.addSubview(timeTitleLabelCopy)
             }
             
-            
             window.addSubview(copyUIView)
             window.backgroundColor = UIColor(white: 0.0, alpha: 1)
             
             containerView.addSubview(toViewController.view)
             toViewController.view.alpha = 0
-            fromViewController.view.alpha = 0.6
+            fromViewController.view.alpha = 0.9
+            
             UIView.animateWithDuration(0.4, animations: { () -> Void in
                 copyUIView.frame.size.width = 320
                 copyUIView.frame.size.height = 62
@@ -192,21 +192,75 @@ class CreateEventViewController: UIViewController, UIViewControllerTransitioning
         } else {
             var window = UIApplication.sharedApplication().keyWindow
             var copyUIView = UIView(frame: CGRect(x: 0, y: 56, width: 320, height: 62))
-            copyUIView.backgroundColor = UIColor(red: 255/255, green: 136/255, blue: 77/255, alpha: 0.05)
-
+            copyUIView.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
+            
+            if (editingFrame == 1) {
+                var nameTitleLabelCopy = UILabel(frame: nameTitleLabel.frame)
+                nameTitleLabelCopy.text = "Name"
+                nameTitleLabelCopy.textColor = UIColor(red: 50/255, green: 82/255, blue: 110/255, alpha: 1.0)
+                nameTitleLabelCopy.font = UIFont.systemFontOfSize(10.0)
+                
+                var nameLabelCopy = UILabel(frame: nameLabel.frame)
+                nameLabelCopy.text = nameLabel.text
+                nameLabelCopy.font = nameLabel.font
+                nameLabelCopy.textColor = UIColor(white: 0.4, alpha: 1.0)
+                
+                copyUIView.addSubview(nameTitleLabelCopy)
+                copyUIView.addSubview(nameLabelCopy)
+                
+            } else if (editingFrame == 2) {
+                var locationTitleLabelCopy = UILabel(frame: locationTitleLabel.frame)
+                locationTitleLabelCopy.text = "Location"
+                locationTitleLabelCopy.textColor = UIColor(red: 50/255, green: 82/255, blue: 110/255, alpha: 1.0)
+                locationTitleLabelCopy.font = UIFont.systemFontOfSize(10.0)
+                
+                var locationLabelCopy = UILabel(frame: locationLabel.frame)
+                locationLabelCopy.text = locationLabel.text
+                locationLabelCopy.font = locationLabel.font
+                locationLabelCopy.textColor = UIColor(white: 0.4, alpha: 1.0)
+                
+                copyUIView.addSubview(locationTitleLabelCopy)
+                copyUIView.addSubview(locationLabelCopy)
+                
+            } else if (editingFrame == 3) {
+                var dayTitleLabelCopy = UILabel(frame: dayTitleLabel.frame)
+                dayTitleLabelCopy.text = "Date"
+                dayTitleLabelCopy.textColor = dayTitleLabel.textColor
+                dayTitleLabelCopy.font = dayTitleLabel.font
+                
+                var dayLabelCopy = UILabel(frame: dayLabel.frame)
+                dayLabelCopy.text = dayLabel.text
+                dayLabelCopy.textColor = dayLabel.textColor
+                dayLabelCopy.font = dayLabel.font
+                
+                var timeTitleLabelCopy = UILabel(frame: timeTitleLabel.frame)
+                timeTitleLabelCopy.text = "Time"
+                timeTitleLabelCopy.textColor = timeTitleLabel.textColor
+                timeTitleLabelCopy.font = timeTitleLabel.font
+                
+                var timeLabelCopy = UILabel(frame: timeLabel.frame)
+                timeLabelCopy.text = timeLabel.text
+                timeLabelCopy.textColor = timeLabel.textColor
+                timeLabelCopy.font = timeLabel.font
+                
+                copyUIView.addSubview(dayLabelCopy)
+                copyUIView.addSubview(dayTitleLabelCopy)
+                copyUIView.addSubview(timeLabelCopy)
+                copyUIView.addSubview(timeTitleLabelCopy)
+            }
             
             window.addSubview(copyUIView)
+            toViewController.view.alpha = 0.9
+            fromViewController.view.alpha = 0
             
             UIView.animateWithDuration(0.4, animations: { () -> Void in
                 copyUIView.frame = window.convertRect(self.editingView.frame, fromView: self.scrollView)
-                copyUIView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
                 
-                fromViewController.view.alpha = 0
-
                 }) { (finished: Bool) -> Void in
                     transitionContext.completeTransition(true)
                     fromViewController.view.removeFromSuperview()
                     copyUIView.removeFromSuperview()
+                    toViewController.view.alpha = 1.0
                     self.editingFrame = 0
                     self.checkStyles()
             }

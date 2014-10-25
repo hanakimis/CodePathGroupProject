@@ -77,7 +77,6 @@ class EditLocationViewController: UIViewController, UITableViewDelegate, UITable
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         var cell = tableView.dequeueReusableCellWithIdentifier("LocationCell") as LocationCell
         var location = locations[indexPath.row]
         cell.locationLabel.text = (location["description"] as String)
