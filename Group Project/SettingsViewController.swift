@@ -15,59 +15,116 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
     //VARS
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var avatarImage: UIImageView!
+    @IBOutlet weak var chelseaImage: UIImageView!
     @IBOutlet weak var initialsImage: UIImageView!
+    @IBOutlet weak var chelseaInitialsImage: UIImageView!
     @IBOutlet weak var removePhotoButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var oldPasswordTextField: UITextField!
     @IBOutlet weak var newPasswordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
-
+    var enteredText : String!
+    var grayColor = UIColor(red: 0.153, green: 0.153, blue: 0.153, alpha: 1)
+    @IBOutlet weak var libraryImage: UIImageView!
 
 
     //VIEW DID LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        avatarImage.hidden = false
-        initialsImage.hidden = true
+        avatarImage.hidden = true
+        initialsImage.hidden = false
 
         scrollView.contentSize = CGSize(width: 320, height: 568)
+        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 
         //KEYBOARD STUFFS
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
 
-        //LOADING CONFIGURING OF PLACEHOLDERS
-        configureNameTextField()
-        configureEmailTextField()
-        configureOldPasswordTextField()
-        configureNewPasswordTextField()
-        configureConfirmPasswordTextField()
 
+        var defaults = NSUserDefaults.standardUserDefaults()
+        var newUser = defaults.integerForKey("new_user")
 
+        if (newUser == 0) {
+            //LOADING CONFIGURING OF PLACEHOLDERS
+            configureNameTextField()
+            configureEmailTextField()
+            configureOldPasswordTextField()
+            configureNewPasswordTextField()
+            configureConfirmPasswordTextField()
+            removePhotoButton.enabled = true
+            chelseaImage.hidden = false
+            chelseaInitialsImage.hidden = true
+            avatarImage.hidden = true
+            initialsImage.hidden = true
 
+        } else {
+            //LOADING CONFIGURING OF PLACEHOLDERS
+            configureNameTextFieldNew()
+            configureEmailTextFieldNew()
+            configureOldPasswordTextFieldNew()
+            configureNewPasswordTextFieldNew()
+            configureConfirmPasswordTextFieldNew()
+            removePhotoButton.enabled = false
+            chelseaImage.hidden = true
+            chelseaInitialsImage.hidden = true
+            avatarImage.hidden = true
+            initialsImage.hidden = false
+
+        }        
+        
+        
     }
-
-    //FUNCS FOR PLACEHOLDER TEXT
+    
+    //FUNCS FOR PLACEHOLDER TEXT EXSITING USER
     func configureNameTextField() {
-        nameTextField.placeholder = NSLocalizedString("name", comment: "")
+        nameTextField.attributedPlaceholder = NSAttributedString(string:"Chelsea Briggs",
+            attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
     }
-
+    
     func configureEmailTextField() {
-        emailTextField.placeholder = NSLocalizedString("email", comment: "")
+        emailTextField.attributedPlaceholder = NSAttributedString(string:"chelseabriggs@gmail.com",
+            attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
     }
     func configureOldPasswordTextField() {
-        oldPasswordTextField.placeholder = NSLocalizedString("old password", comment: "")
+        oldPasswordTextField.attributedPlaceholder = NSAttributedString(string:"Old password",
+            attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
     }
     func configureNewPasswordTextField() {
-        newPasswordTextField.placeholder = NSLocalizedString("new password", comment: "")
+        newPasswordTextField.attributedPlaceholder = NSAttributedString(string:"New password",
+            attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
     }
     func configureConfirmPasswordTextField() {
-        confirmPasswordTextField.placeholder = NSLocalizedString("confirm password", comment: "")
+        confirmPasswordTextField.attributedPlaceholder = NSAttributedString(string:"Confirm password",
+            attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
+    }
+    
+    
+    //FUNCS FOR PLACEHOLDER TEXT NEW USER
+    func configureNameTextFieldNew() {
+        nameTextField.attributedPlaceholder = NSAttributedString(string:"John Otis",
+            attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
     }
 
+    func configureEmailTextFieldNew() {
+        emailTextField.attributedPlaceholder = NSAttributedString(string:"johnotis@gmail.com",
+            attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
+    }
+    func configureOldPasswordTextFieldNew() {
+        oldPasswordTextField.attributedPlaceholder = NSAttributedString(string:"Old password",
+            attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
+    }
+    func configureNewPasswordTextFieldNew() {
+        newPasswordTextField.attributedPlaceholder = NSAttributedString(string:"New password",
+            attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
+    }
+    func configureConfirmPasswordTextFieldNew() {
+        confirmPasswordTextField.attributedPlaceholder = NSAttributedString(string:"Confirm password",
+            attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
 
+    }
 
 
 
@@ -83,12 +140,16 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
         //imagePickerController.sourceType = UIImagePickerControllerSourceType.Camera
         imagePickerController.delegate = self
         self.presentViewController(imagePickerController, animated: true, completion: nil)
+
+        removePhotoButton.enabled = true
     }
 
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
     
         var tempImage:UIImage = info[UIImagePickerControllerOriginalImage] as UIImage
-        initialsImage.image = tempImage
+        libraryImage.image = tempImage
+
+        libraryImage.hidden = false
         
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -102,8 +163,10 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
     //REMOVE IMAGE
     @IBAction func onRemoveImage(sender: AnyObject) {
 
-        avatarImage.hidden = true
-        initialsImage.hidden = false
+
+        chelseaImage.hidden = true
+        libraryImage.hidden = true
+        chelseaInitialsImage.hidden = false
         removePhotoButton.enabled = false
 
 
@@ -124,7 +187,7 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
 
         UIView.animateWithDuration(animationDuration, delay: 0.15, options: UIViewAnimationOptions.fromRaw(UInt(animationCurve << 16))!, animations: {
 
-            self.scrollView.contentOffset.y = 120
+            self.scrollView.contentOffset.y = 100
             }, completion: nil)
     }
 
@@ -145,6 +208,35 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
             }, completion: nil)
     }
     
+    //SAVE BUTTON
+    @IBAction func onSaveButton(sender: AnyObject) {
+
+        var savingAlertView = UIAlertView(title: "Saving...", message: nil, delegate: nil, cancelButtonTitle: nil)
+        savingAlertView.show()
+
+        delay(2, closure: { () -> () in
+            savingAlertView.dismissWithClickedButtonIndex(0, animated: true)
+            self.oldPasswordTextField.text = ""
+            self.newPasswordTextField.text = ""
+            self.confirmPasswordTextField.text = ""
+        })
+
+
+    }
+
+
+    //DELAY FUNCTION
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
+    }
+
+
+
     
 
 }

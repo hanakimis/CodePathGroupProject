@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="LeP-Mt-JRp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="xQr-ni-0bY">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -1118,18 +1118,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="P4l-YZ-JpY">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="63" width="320" height="505"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm New Password" minimumFontSize="17" id="P8K-SR-aG4">
-                                        <rect key="frame" x="27" y="363" width="264" height="30"/>
+                                        <rect key="frame" x="27" y="300" width="264" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iLS-Rh-htV">
-                                        <rect key="frame" x="28" y="423" width="264" height="30"/>
+                                        <rect key="frame" x="28" y="360" width="264" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -1137,9 +1137,12 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onSaveButton:" destination="SvG-CH-Mub" eventType="touchUpInside" id="pjH-eW-E1A"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Old Password" minimumFontSize="17" id="6Ew-aJ-24w">
-                                        <rect key="frame" x="27" y="275" width="264" height="30"/>
+                                        <rect key="frame" x="27" y="212" width="264" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -1149,7 +1152,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" minimumFontSize="17" id="NcQ-kh-enZ">
-                                        <rect key="frame" x="28" y="319" width="264" height="30"/>
+                                        <rect key="frame" x="28" y="256" width="264" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -1159,21 +1162,21 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="John Otis" minimumFontSize="17" id="K5E-9F-qyl">
-                                        <rect key="frame" x="27" y="187" width="264" height="30"/>
+                                        <rect key="frame" x="27" y="124" width="264" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="johnotis@gmail.com" minimumFontSize="17" id="2s3-cV-5kD">
-                                        <rect key="frame" x="27" y="231" width="264" height="30"/>
+                                        <rect key="frame" x="27" y="168" width="264" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="toQ-5h-pgt">
-                                        <rect key="frame" x="106" y="473" width="107" height="30"/>
+                                        <rect key="frame" x="106" y="410" width="107" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <state key="normal" title="Sign out">
@@ -1188,7 +1191,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zmt-MV-n0A">
-                                        <rect key="frame" x="173" y="139" width="87" height="30"/>
+                                        <rect key="frame" x="173" y="84" width="87" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <state key="normal" title="Remove Photo">
@@ -1203,7 +1206,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jhl-jY-c4B">
-                                        <rect key="frame" x="60" y="139" width="81" height="30"/>
+                                        <rect key="frame" x="60" y="84" width="81" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <state key="normal" title="Update Photo">
@@ -1218,11 +1221,27 @@
                                         </connections>
                                     </button>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="john-oliver" id="54e-QU-f3B">
-                                        <rect key="frame" x="129" y="58" width="60" height="60"/>
+                                        <rect key="frame" x="129" y="20" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="john-oliver-initials" id="WAJ-kX-PM7">
-                                        <rect key="frame" x="129" y="58" width="60" height="60"/>
+                                        <rect key="frame" x="129" y="20" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="chelsea" id="YPr-Ml-iga">
+                                        <rect key="frame" x="129" y="20" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="chelsea-initials" id="Yr7-P8-eIK">
+                                        <rect key="frame" x="129" y="20" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="g0Q-UO-qI3">
+                                        <rect key="frame" x="129" y="20" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="circle-cover" id="Mr2-dc-mQA">
+                                        <rect key="frame" x="124" y="15" width="70" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                 </subviews>
@@ -1238,9 +1257,12 @@
                     <navigationItem key="navigationItem" title="Settings" id="v7Q-od-AtX"/>
                     <connections>
                         <outlet property="avatarImage" destination="54e-QU-f3B" id="wQd-fg-LHS"/>
+                        <outlet property="chelseaImage" destination="YPr-Ml-iga" id="7eY-e4-TGD"/>
+                        <outlet property="chelseaInitialsImage" destination="Yr7-P8-eIK" id="pwg-ju-UhZ"/>
                         <outlet property="confirmPasswordTextField" destination="P8K-SR-aG4" id="Z99-JR-2AB"/>
                         <outlet property="emailTextField" destination="2s3-cV-5kD" id="HlV-3z-cxM"/>
                         <outlet property="initialsImage" destination="WAJ-kX-PM7" id="lVU-Nc-E6w"/>
+                        <outlet property="libraryImage" destination="g0Q-UO-qI3" id="wIQ-gX-g5L"/>
                         <outlet property="nameTextField" destination="K5E-9F-qyl" id="x7U-8C-QiK"/>
                         <outlet property="newPasswordTextField" destination="NcQ-kh-enZ" id="mPg-gR-Faq"/>
                         <outlet property="oldPasswordTextField" destination="6Ew-aJ-24w" id="X9P-fd-esG"/>
@@ -2280,6 +2302,9 @@
         <image name="a_1x" width="30" height="30"/>
         <image name="b_1x" width="30" height="30"/>
         <image name="c_1x" width="30" height="30"/>
+        <image name="chelsea" width="60" height="60"/>
+        <image name="chelsea-initials" width="60" height="60"/>
+        <image name="circle-cover" width="70" height="70"/>
         <image name="d_1x" width="30" height="30"/>
         <image name="e_1x" width="30" height="30"/>
         <image name="f_1x" width="30" height="30"/>
@@ -2306,6 +2331,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="6gH-kD-jDx"/>
+        <segue reference="8T1-wR-Y9Z"/>
     </inferredMetricsTieBreakers>
 </document>

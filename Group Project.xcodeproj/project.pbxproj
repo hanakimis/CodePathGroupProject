@@ -268,11 +268,11 @@
 				TargetAttributes = {
 					80A68E4D19D15FB700D34365 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = CAT6HF57NJ;
+						DevelopmentTeam = DJXQ49NV5E;
 					};
 					80A68E6219D15FB700D34365 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = CAT6HF57NJ;
+						DevelopmentTeam = DJXQ49NV5E;
 						TestTargetID = 80A68E4D19D15FB700D34365;
 					};
 				};
