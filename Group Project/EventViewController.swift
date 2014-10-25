@@ -44,7 +44,6 @@ class EventViewController: UIViewController {
         dateLabel.text = detailEvent["detail-date"]
         hostAvatar.image = UIImage(named: detailEvent["host"]!)
 
-        
     }
 
     override func didReceiveMemoryWarning() {

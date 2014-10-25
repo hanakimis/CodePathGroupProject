@@ -289,6 +289,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" red="0.1960784495" green="0.26666668059999998" blue="0.35686275360000003" alpha="1" colorSpace="deviceRGB"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO RESPONSE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aVB-fY-Z0d">
+                                <rect key="frame" x="25" y="301" width="102" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" red="0.1960784495" green="0.26666668059999998" blue="0.35686275360000003" alpha="1" colorSpace="deviceRGB"/>
+                            </label>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="f_1x" id="exk-YA-C6r">
                                 <rect key="frame" x="19" y="326" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -1884,6 +1891,7 @@
         <!--Past Detail-->
         <scene sceneID="IqU-pz-6hN">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Scw-zv-onB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="kah-aV-Ywf" userLabel="Past Detail" customClass="EventViewController" customModule="Group_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9qY-hd-9Xo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
