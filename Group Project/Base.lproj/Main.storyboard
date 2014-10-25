@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="LeP-Mt-JRp">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -692,14 +691,17 @@
                         <outlet property="addGuestsButton" destination="soa-dy-gyp" id="Fiu-Af-Cmu"/>
                         <outlet property="dateTimeUIView" destination="OUk-af-7V0" id="9Q6-NI-s4J"/>
                         <outlet property="dayLabel" destination="sUa-8O-RkV" id="MkO-cS-C3n"/>
+                        <outlet property="dayTitleLabel" destination="fa8-xc-VL4" id="JE1-b8-mZE"/>
                         <outlet property="guestsUIView" destination="Xpv-QG-Rsg" id="u05-Bw-Vdh"/>
                         <outlet property="locationLabel" destination="oBG-HV-LsE" id="DRD-6G-jDP"/>
+                        <outlet property="locationTitleLabel" destination="f8H-hw-f0V" id="CtC-7l-TEX"/>
                         <outlet property="locationUIView" destination="Ccg-aW-PXB" id="sFp-L9-6j6"/>
                         <outlet property="nameLabel" destination="M61-Li-RN2" id="len-Dq-FEm"/>
                         <outlet property="nameTitleLabel" destination="eLI-Zl-f1K" id="FAp-S0-Q5v"/>
                         <outlet property="nameUIView" destination="uji-qP-MIc" id="XjM-nA-FyO"/>
                         <outlet property="scrollView" destination="u3m-1k-Ghz" id="f6s-tA-efm"/>
                         <outlet property="timeLabel" destination="vAc-BG-3NX" id="MlO-9w-Beq"/>
+                        <outlet property="timeTitleLabel" destination="Uhw-5c-YUH" id="fnL-4r-zKv"/>
                         <segue destination="BQa-Hb-GXm" kind="modal" identifier="addNameSegue" id="bmo-GI-xlF"/>
                     </connections>
                 </viewController>
