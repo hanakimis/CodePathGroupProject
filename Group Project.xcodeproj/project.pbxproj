@@ -22,7 +22,7 @@
 		803B281A19F48CDE0045C0F4 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803B281919F48CDE0045C0F4 /* DayViewController.swift */; };
 		80895C3119F5120100998F5C /* TimeInDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80895C3019F5120100998F5C /* TimeInDayViewController.swift */; };
 		80A68E5419D15FB700D34365 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A68E5319D15FB700D34365 /* AppDelegate.swift */; };
-		80A68E5619D15FB700D34365 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A68E5519D15FB700D34365 /* ViewController.swift */; };
+		80A68E5619D15FB700D34365 /* UpcomingEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A68E5519D15FB700D34365 /* UpcomingEventsViewController.swift */; };
 		80A68E5919D15FB700D34365 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80A68E5719D15FB700D34365 /* Main.storyboard */; };
 		80A68E5B19D15FB700D34365 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80A68E5A19D15FB700D34365 /* Images.xcassets */; };
 		80A68E5E19D15FB700D34365 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80A68E5C19D15FB700D34365 /* LaunchScreen.xib */; };
@@ -32,6 +32,8 @@
 		80BB61FC19F4CDC300EDA4AE /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BB61FB19F4CDC300EDA4AE /* EventViewController.swift */; };
 		80CB752C19F330F0006516C6 /* SuppliesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CB752B19F330F0006516C6 /* SuppliesViewController.swift */; };
 		80CB752E19F33472006516C6 /* SuppliesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CB752D19F33472006516C6 /* SuppliesCell.swift */; };
+		AF3917CC19FC382000D6FF2E /* UpcomingEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3917CB19FC382000D6FF2E /* UpcomingEventViewController.swift */; };
+		AF62860919FC41E30044948B /* DetailEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF62860819FC41E30044948B /* DetailEventViewController.swift */; };
 		AFA6A7D519F03F0E00E81508 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6A7D419F03F0E00E81508 /* NewUserViewController.swift */; };
 		AFB3858C19F07BF30031CA5E /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB3858B19F07BF30031CA5E /* EventTableViewCell.swift */; };
 		AFB3858E19F07C590031CA5E /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB3858D19F07C590031CA5E /* EventCell.swift */; };
@@ -72,7 +74,7 @@
 		80A68E4E19D15FB700D34365 /* Group Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Group Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80A68E5219D15FB700D34365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80A68E5319D15FB700D34365 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		80A68E5519D15FB700D34365 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		80A68E5519D15FB700D34365 /* UpcomingEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingEventsViewController.swift; sourceTree = "<group>"; };
 		80A68E5819D15FB700D34365 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80A68E5A19D15FB700D34365 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		80A68E5D19D15FB700D34365 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -84,6 +86,8 @@
 		80BB61FB19F4CDC300EDA4AE /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		80CB752B19F330F0006516C6 /* SuppliesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuppliesViewController.swift; sourceTree = "<group>"; };
 		80CB752D19F33472006516C6 /* SuppliesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuppliesCell.swift; sourceTree = "<group>"; };
+		AF3917CB19FC382000D6FF2E /* UpcomingEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingEventViewController.swift; sourceTree = "<group>"; };
+		AF62860819FC41E30044948B /* DetailEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailEventViewController.swift; sourceTree = "<group>"; };
 		AFA6A7D419F03F0E00E81508 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		AFB3858B19F07BF30031CA5E /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		AFB3858D19F07C590031CA5E /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 		80A68E4519D15FB700D34365 = {
 			isa = PBXGroup;
 			children = (
+				AF3917CB19FC382000D6FF2E /* UpcomingEventViewController.swift */,
 				80895C3019F5120100998F5C /* TimeInDayViewController.swift */,
 				800DFBAA19ED258E006CD470 /* CoreLocation.framework */,
 				80A68E5019D15FB700D34365 /* Group Project */,
@@ -158,8 +163,9 @@
 			children = (
 				AFCA6E0219F2FD11008F3861 /* TableViewViewController.swift */,
 				80A68E5319D15FB700D34365 /* AppDelegate.swift */,
-				80A68E5519D15FB700D34365 /* ViewController.swift */,
+				80A68E5519D15FB700D34365 /* UpcomingEventsViewController.swift */,
 				80A68E5719D15FB700D34365 /* Main.storyboard */,
+				AF62860819FC41E30044948B /* DetailEventViewController.swift */,
 				80BB61FB19F4CDC300EDA4AE /* EventViewController.swift */,
 				803B281919F48CDE0045C0F4 /* DayViewController.swift */,
 				AFA6A7D419F03F0E00E81508 /* NewUserViewController.swift */,
@@ -313,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				803B280619F46ED00045C0F4 /* EditLocationViewController.swift in Sources */,
+				AF3917CC19FC382000D6FF2E /* UpcomingEventViewController.swift in Sources */,
 				803B281519F48C670045C0F4 /* DateUtil.m in Sources */,
 				80BB61FC19F4CDC300EDA4AE /* EventViewController.swift in Sources */,
 				80CB752C19F330F0006516C6 /* SuppliesViewController.swift in Sources */,
@@ -323,8 +330,9 @@
 				803B281819F48C670045C0F4 /* SACalendarCell.m in Sources */,
 				AFB3858E19F07C590031CA5E /* EventCell.swift in Sources */,
 				611F178619EE2B5A00DAEC15 /* ContactsViewController.swift in Sources */,
-				80A68E5619D15FB700D34365 /* ViewController.swift in Sources */,
+				80A68E5619D15FB700D34365 /* UpcomingEventsViewController.swift in Sources */,
 				80A68E5419D15FB700D34365 /* AppDelegate.swift in Sources */,
+				AF62860919FC41E30044948B /* DetailEventViewController.swift in Sources */,
 				803B281A19F48CDE0045C0F4 /* DayViewController.swift in Sources */,
 				803B281619F48C670045C0F4 /* DMLazyScrollView.m in Sources */,
 				6109942919EC9B03003CAEDD /* SignInViewController.swift in Sources */,
