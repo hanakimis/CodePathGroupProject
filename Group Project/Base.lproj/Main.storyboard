@@ -1254,7 +1254,12 @@
                     <navigationItem key="navigationItem" title="Settings" id="v7Q-od-AtX"/>
                     <connections>
                         <outlet property="avatarImage" destination="54e-QU-f3B" id="wQd-fg-LHS"/>
+                        <outlet property="confirmPasswordTextField" destination="P8K-SR-aG4" id="Z99-JR-2AB"/>
+                        <outlet property="emailTextField" destination="2s3-cV-5kD" id="HlV-3z-cxM"/>
                         <outlet property="initialsImage" destination="WAJ-kX-PM7" id="lVU-Nc-E6w"/>
+                        <outlet property="nameTextField" destination="K5E-9F-qyl" id="x7U-8C-QiK"/>
+                        <outlet property="newPasswordTextField" destination="NcQ-kh-enZ" id="mPg-gR-Faq"/>
+                        <outlet property="oldPasswordTextField" destination="6Ew-aJ-24w" id="X9P-fd-esG"/>
                         <outlet property="removePhotoButton" destination="zmt-MV-n0A" id="ssk-dy-44N"/>
                         <outlet property="scrollView" destination="P4l-YZ-JpY" id="EdJ-bI-Guo"/>
                     </connections>
