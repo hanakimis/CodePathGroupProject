@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="xQr-ni-0bY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -156,6 +156,10 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_upcoming" id="Gfn-JN-vyj">
+                                <rect key="frame" x="0.0" y="10" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.96794627356150786" green="0.96253875248015874" blue="0.9733537946428571" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -166,7 +170,7 @@
                                 <rect key="frame" x="260" y="9" width="59" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add">
-                                    <color key="titleColor" red="0.1435481720159586" green="0.45675517073572836" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -177,6 +181,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="emptyIntro" destination="Gfn-JN-vyj" id="NcI-KQ-jrA"/>
                         <outlet property="tableView" destination="7qT-bZ-cnW" id="bKf-UY-wm9"/>
                     </connections>
                 </viewController>
@@ -1254,6 +1259,18 @@
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0XR-gy-l55">
+                                        <rect key="frame" x="754" y="485" width="93" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="Not right now">
+                                            <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="xQr-ni-0bY" kind="modal" id="rML-Et-kyy"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -1861,7 +1878,6 @@
         <!--Past Detail-->
         <scene sceneID="IqU-pz-6hN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Scw-zv-onB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="kah-aV-Ywf" userLabel="Past Detail" customClass="EventViewController" customModule="Group_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9qY-hd-9Xo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -1987,6 +2003,7 @@
                         <outlet property="timeLabel" destination="ps7-ei-utR" id="woh-Ux-j6i"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Scw-zv-onB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1133" y="1825"/>
         </scene>
@@ -2000,6 +2017,7 @@
         <image name="claire" width="60" height="60"/>
         <image name="d_1x" width="30" height="30"/>
         <image name="e_1x" width="30" height="30"/>
+        <image name="empty_upcoming" width="320" height="568"/>
         <image name="f_1x" width="30" height="30"/>
         <image name="gather-logo" width="152" height="60"/>
         <image name="heather" width="60" height="60"/>
@@ -2020,6 +2038,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="6gH-kD-jDx"/>
         <segue reference="ssD-Ey-ylP"/>
     </inferredMetricsTieBreakers>
 </document>

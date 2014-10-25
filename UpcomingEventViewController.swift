@@ -11,6 +11,7 @@ import UIKit
 class UpcomingEventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyIntro: UIImageView!
         
         var currentEvents = [
             [
@@ -26,8 +27,8 @@ class UpcomingEventViewController: UIViewController, UITableViewDelegate, UITabl
                         "host":"h_1x"
                     ],
                     [
-                        "event":"Snowboarding",
-                        "address":"Mission",
+                        "event":"Sam's Going Away",
+                        "address":"3010 20th St",
                         "response":"Invited",
                         "date":"7/11",
                         "detail-date":"Saturday - July 11",
@@ -72,12 +73,26 @@ class UpcomingEventViewController: UIViewController, UITableViewDelegate, UITabl
         override func viewDidLoad() {
             super.viewDidLoad()
             
+            var defaults = NSUserDefaults.standardUserDefaults()
+            var newUser = defaults.integerForKey("new_user")
+            
+            // 1 is new, 0 is existing
+            if ( newUser == 1 ) {
+                tableView.alpha = 0
+                emptyIntro.alpha = 1
+                println("new")
+            } else {
+                println("easdfasdfasdfxisitng")
+            
+            }
+//
             tableView.delegate = self
             tableView.dataSource = self
             
             tableView.rowHeight = 78
             tableView.layer.cornerRadius = 2.0
             //tableView.frame.width = 304
+            
             
             // Do any additional setup after loading the view.
         }
@@ -156,14 +171,14 @@ class UpcomingEventViewController: UIViewController, UITableViewDelegate, UITabl
             eventViewController.detailEvent = event
         }
         
-        //        func tableView(tableView: UITableView, didSselectRowAtIndexPath indexPath: NSIndexPath) {
-        //
-        ////            println("selected")
-        ////            tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        //
-        //
-        //        }
+        func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
+                    println("selected")
+                    tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        
+                }
+    
         override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
             // Dispose of any resources that can be recreated
