@@ -85,6 +85,18 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
 
             }
 
+            var defaults = NSUserDefaults.standardUserDefaults()
+            var newUser = defaults.integerForKey("new_user")
+
+            // 1 is new, 0 is existing
+            if ( newUser == 1 ) {
+                tableView.alpha = 0
+                println("new")
+            } else {
+                println("easdfasdfasdfxisitng")
+
+            }
+
             tableView.delegate = self
             tableView.dataSource = self
 
@@ -166,7 +178,7 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
             eventViewController.detailEvent = event
         }
 
-        
+
         func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
         //            println("selected")

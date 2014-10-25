@@ -12,6 +12,7 @@ class UpcomingEventViewController: UIViewController, UITableViewDelegate, UITabl
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyIntro: UIImageView!
+
         var currentEvents = [
             [
                 "title": "OCTOBER",
