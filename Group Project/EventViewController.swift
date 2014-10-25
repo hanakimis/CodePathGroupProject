@@ -29,10 +29,9 @@ class EventViewController: UIViewController {
 
     var guests: [Int]!
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         headerUIView.backgroundColor = UIColor(white: 1, alpha: 0.9)
         headerUIView.hidden = true
         
@@ -44,11 +43,11 @@ class EventViewController: UIViewController {
         dateLabel.text = detailEvent["detail-date"]
         hostAvatar.image = UIImage(named: detailEvent["host"]!)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
 }

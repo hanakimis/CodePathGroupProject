@@ -12,7 +12,6 @@ class UpcomingEventViewController: UIViewController, UITableViewDelegate, UITabl
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyIntro: UIImageView!
-        
         var currentEvents = [
             [
                 "title": "OCTOBER",
@@ -34,7 +33,6 @@ class UpcomingEventViewController: UIViewController, UITableViewDelegate, UITabl
                         "detail-date":"Saturday - July 11",
                         "time":"9:00PM",
                         "host":"b_1x"
-
                     ],
                     [
                         "event":"stuff",
@@ -75,7 +73,6 @@ class UpcomingEventViewController: UIViewController, UITableViewDelegate, UITabl
             
             var defaults = NSUserDefaults.standardUserDefaults()
             var newUser = defaults.integerForKey("new_user")
-
             // 1 is new, 0 is existing
             if ( newUser == 1 ) {
                 tableView.alpha = 0
@@ -83,7 +80,6 @@ class UpcomingEventViewController: UIViewController, UITableViewDelegate, UITabl
                 println("new")
             } else {
                 println("easdfasdfasdfxisitng")
-
             }
 //
             tableView.delegate = self
@@ -97,7 +93,6 @@ class UpcomingEventViewController: UIViewController, UITableViewDelegate, UITabl
         }
 
 
-
         func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             let events = currentEvents[section]["events"] as NSArray
             return events.count
@@ -108,7 +103,6 @@ class UpcomingEventViewController: UIViewController, UITableViewDelegate, UITabl
         func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
             var cell = tableView.dequeueReusableCellWithIdentifier("EventCell") as EventCell
-
             let events = currentEvents[indexPath.section]["events"] as Array<Dictionary<String, String>>
             var currentEvent = events[indexPath.row]
             //
@@ -118,7 +112,6 @@ class UpcomingEventViewController: UIViewController, UITableViewDelegate, UITabl
             cell.dateLabel.text = currentEvent["date"]
             cell.timeLabel.text = currentEvent["time"]
             cell.hostAvatar.image = UIImage(named: currentEvent["host"]!)
-
 
             if (cell.responseLabel.text == "Invited"){
                 println("test")
@@ -172,11 +165,11 @@ class UpcomingEventViewController: UIViewController, UITableViewDelegate, UITabl
         
         func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
-                    println("selected")
-                    tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            println("selected")
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
-        
-                }
+
+        }
 
         override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
@@ -185,12 +178,10 @@ class UpcomingEventViewController: UIViewController, UITableViewDelegate, UITabl
         }
         /*
         // MARK: - Navigation
-
         // In a storyboard-based application, you will often want to do a little preparation before navigation
         override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         }
         */
-
 }

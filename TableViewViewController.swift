@@ -12,7 +12,6 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
 
 
     @IBOutlet weak var tableView: UITableView!
-
         var currentEvents = [
             [
                 "title": "AUGUST",
@@ -34,7 +33,6 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
                         "detail-date":"Saturday - July 11",
                         "time":"9:00PM",
                         "host":"c_1x"
-
                     ],
                     [
                         "event":"stuff",
@@ -69,23 +67,21 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
                 ]
             ]
         ]
-
-
+        
         override func viewDidLoad() {
-            super.viewDidLoad()
-            
+            super.viewDidLoad()            
             var defaults = NSUserDefaults.standardUserDefaults()
             var newUser = defaults.integerForKey("new_user")
-
+            
             // 1 is new, 0 is existing
             if ( newUser == 1 ) {
                 tableView.alpha = 0
                 println("new")
             } else {
                 println("easdfasdfasdfxisitng")
-
+                
             }
-
+            
             tableView.delegate = self
             tableView.dataSource = self
 
@@ -95,6 +91,7 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
 
             // Do any additional setup after loading the view.
         }
+
         
         func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             let events = currentEvents[section]["events"] as NSArray
@@ -116,6 +113,10 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
             cell.dateLabel.text = currentEvent["date"]
             cell.timeLabel.text = currentEvent["time"]
             cell.hostAvatar.image = UIImage(named: currentEvent["host"]!)
+
+            tableView.rowHeight = 78
+            tableView.layer.cornerRadius = 2.0
+            //tableView.frame.width = 304
 
             if (cell.responseLabel.text == "Invited"){
                 println("test")
@@ -158,7 +159,6 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
             var eventViewController = segue.destinationViewController as EventViewController
             let indexPath = self.tableView.indexPathForSelectedRow()!
 
-
             // 1. figure out which event was pressed
             let eventsInSection = currentEvents[indexPath.section]["events"] as Array<Dictionary<String, String>>
             let event = eventsInSection[indexPath.row]
@@ -166,14 +166,12 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
             // 2. hand it to  eventViewController
             eventViewController.detailEvent = event
         }
-
         
         func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-
-        //            println("selected")
-                    tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-                }
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        }
 
         override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
@@ -189,5 +187,4 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
         // Pass the selected object to the new view controller.
         }
         */
-
 }

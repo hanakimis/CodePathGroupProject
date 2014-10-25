@@ -13,9 +13,6 @@ class DetailEventViewController: UIViewController {
     @IBOutlet weak var mapImage: UIImageView!
     @IBOutlet weak var headerUIView: UIView!
 
-
-        //@IBOutlet weak var headerUIView: UIView!
-
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -49,6 +46,5 @@ class DetailEventViewController: UIViewController {
             super.didReceiveMemoryWarning()
             // Dispose of any resources that can be recreated.
         }
-
 
 }
