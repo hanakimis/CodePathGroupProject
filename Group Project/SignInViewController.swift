@@ -39,7 +39,6 @@ class SignInViewController: UIViewController {
         if (self.emailTextField.text == "chelseabriggs@gmail.com") && (self.passwordTextField.text == "password") {
             
             delay(2, closure: { () -> () in
-                
                 var defaults = NSUserDefaults.standardUserDefaults()
                 defaults.setInteger(0, forKey: "new_user")
                 defaults.synchronize()
