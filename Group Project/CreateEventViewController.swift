@@ -29,6 +29,16 @@ class CreateEventViewController: UIViewController, UIViewControllerTransitioning
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var defaults = NSUserDefaults.standardUserDefaults()
+        var newUser = defaults.integerForKey("new_user")
+        
+        if (newUser == 0) {
+            println("not a new user")
+        } else {
+            println("Yes, a new user")
+        }
+        
     }
     
     
