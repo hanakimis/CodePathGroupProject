@@ -1,19 +1,21 @@
 //
-//  ContactsViewController.swift
+//  SearchViewController.swift
 //  Group Project
 //
-//  Created by Jessica Jarvis on 10/14/14.
+//  Created by Jessica Jarvis on 10/21/14.
 //  Copyright (c) 2014 Hana-Ida-Jessica. All rights reserved.
 //
 
 import UIKit
-import AddressBookUI
 
-class ContactsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //VARS
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchField: UITextField!
+
+    
+    var results: [NSDictionary] = []
     
     var users = [
         [
@@ -87,19 +89,23 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
             "email":"wesdearborn@gmail.com"
         ],
     ]
+
+
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 84
         
+        searchField.becomeFirstResponder()
         
-
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
     
     //TABLE VIEW FUNCTIONS
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -107,15 +113,18 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
         
-        var cell = tableView.dequeueReusableCellWithIdentifier("ContactsTableViewCell") as ContactsTableViewCell
+        
+        var cell = tableView.dequeueReusableCellWithIdentifier("SearchTableViewCell") as SearchTableViewCell
         
         var user = users[indexPath.row]
         var imageName = user["userImage"] as String!
         
         cell.contactName.text = user["name"]
         cell.contactImage.image = UIImage(named: imageName)
+
+        
+
         
         return cell
         
@@ -130,13 +139,8 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
         cell!.accessoryType = .Checkmark
         
     }
-
+    
     
 
-
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
 
 }

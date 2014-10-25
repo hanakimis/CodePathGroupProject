@@ -12,7 +12,6 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
 
 
     @IBOutlet weak var tableView: UITableView!
-        
         var currentEvents = [
             [
                 "title": "AUGUST",
@@ -34,7 +33,6 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
                         "detail-date":"Saturday - July 11",
                         "time":"9:00PM",
                         "host":"c_1x"
-                        
                     ],
                     [
                         "event":"stuff",
@@ -71,8 +69,7 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
         ]
         
         override func viewDidLoad() {
-            super.viewDidLoad()
-            
+            super.viewDidLoad()            
             var defaults = NSUserDefaults.standardUserDefaults()
             var newUser = defaults.integerForKey("new_user")
             
@@ -87,15 +84,14 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
             
             tableView.delegate = self
             tableView.dataSource = self
-            
+
             tableView.rowHeight = 78
             tableView.layer.cornerRadius = 2.0
             //tableView.frame.width = 304
-            
+
             // Do any additional setup after loading the view.
         }
-        
-        
+
         
         func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             let events = currentEvents[section]["events"] as NSArray
@@ -105,9 +101,9 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         
         func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-            
+
             var cell = tableView.dequeueReusableCellWithIdentifier("EventCell") as EventCell
-            
+
             let events = currentEvents[indexPath.section]["events"] as Array<Dictionary<String, String>>
             var currentEvent = events[indexPath.row]
             //
@@ -117,54 +113,54 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
             cell.dateLabel.text = currentEvent["date"]
             cell.timeLabel.text = currentEvent["time"]
             cell.hostAvatar.image = UIImage(named: currentEvent["host"]!)
-            
-            
+
+
             if (cell.responseLabel.text == "Invited"){
                 println("test")
-                
+
             }
-            
+
             return cell
-            
+
         }
         
-        
+
         func numberOfSectionsInTableView(tableView: UITableView) -> Int {
             return currentEvents.count
         }
-        
+
         func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-            
+
             //top-level header
             var headerView = UIView(frame: CGRect(x: 10, y: 0, width: 310, height: 30))
             headerView.backgroundColor = UIColor(white: 0.8, alpha: 0.8)
-            
+
             //add label
-            
+
             var label = UILabel(frame: headerView.frame)
             label.text = currentEvents[section]["title"] as String?
             label.font = UIFont.boldSystemFontOfSize(14)
             label.textColor = UIColor(red: 0.992, green: 0.502, blue: 0.137, alpha: 1)
-            
+
             headerView.addSubview(label)
-            
+
             return headerView
-            
+
         }
-        
+
         func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
             return 30
         }
-        
+
         override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
             var eventViewController = segue.destinationViewController as EventViewController
             let indexPath = self.tableView.indexPathForSelectedRow()!
-            
-            
+
+
             // 1. figure out which event was pressed
             let eventsInSection = currentEvents[indexPath.section]["events"] as Array<Dictionary<String, String>>
             let event = eventsInSection[indexPath.row]
-            
+
             // 2. hand it to  eventViewController
             eventViewController.detailEvent = event
         }
@@ -175,20 +171,18 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
                     tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
                 }
-    
         override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
             // Dispose of any resources that can be recreated
-            
+
         }
         /*
         // MARK: - Navigation
-        
+
         // In a storyboard-based application, you will often want to do a little preparation before navigation
         override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         }
         */
-        
 }

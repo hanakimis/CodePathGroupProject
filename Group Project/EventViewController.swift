@@ -12,24 +12,22 @@ class EventViewController: UIViewController {
 
     @IBOutlet weak var mapImage: UIImageView!
     @IBOutlet weak var headerUIView: UIView!
-    
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    
+
     @IBOutlet weak var hostAvatar: UIImageView!
-    
+
 //    @IBOutlet weak var eventName: UILabel!
 //    @IBOutlet weak var addressLabel: UILabel!
 //    @IBOutlet weak var timeLabel: UILabel!
 //    @IBOutlet weak var dateLabel: UILabel!
-    
+
     var detailEvent: Dictionary<String, String>!
-    
+
     var guests: [Int]!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,8 +41,6 @@ class EventViewController: UIViewController {
         timeLabel.text = detailEvent["time"]
         dateLabel.text = detailEvent["detail-date"]
         hostAvatar.image = UIImage(named: detailEvent["host"]!)
-
-        
     }
     
     override func didReceiveMemoryWarning() {
