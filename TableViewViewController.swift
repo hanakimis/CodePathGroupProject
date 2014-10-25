@@ -69,7 +69,8 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
                 ]
             ]
         ]
-        
+
+
         override func viewDidLoad() {
             super.viewDidLoad()
 
@@ -82,8 +83,6 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
 
             // Do any additional setup after loading the view.
         }
-
-
         
         func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             let events = currentEvents[section]["events"] as NSArray
@@ -105,7 +104,6 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
             cell.dateLabel.text = currentEvent["date"]
             cell.timeLabel.text = currentEvent["time"]
             cell.hostAvatar.image = UIImage(named: currentEvent["host"]!)
-
 
             if (cell.responseLabel.text == "Invited"){
                 println("test")
