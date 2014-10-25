@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="LeP-Mt-JRp">
     <dependencies>
         <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -599,23 +599,6 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <view contentMode="scaleToFill" id="QPu-aB-7WP" userLabel="Supplies">
-                                        <rect key="frame" x="8" y="272" width="304" height="46"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VQA-gP-1z1">
-                                                <rect key="frame" x="0.0" y="0.0" width="309" height="46"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <state key="normal" title="Add Supplies">
-                                                    <color key="titleColor" red="0.25098040700000002" green="0.34509804840000002" blue="0.42352944609999998" alpha="1" colorSpace="deviceRGB"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
                                     <view contentMode="scaleToFill" id="OUk-af-7V0" userLabel="Date &amp; Time View">
                                         <rect key="frame" x="8" y="132" width="304" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -707,16 +690,15 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addGuestsButton" destination="soa-dy-gyp" id="Fiu-Af-Cmu"/>
-                        <outlet property="addSuppliesButton" destination="VQA-gP-1z1" id="Eof-uf-Kq0"/>
                         <outlet property="dateTimeUIView" destination="OUk-af-7V0" id="9Q6-NI-s4J"/>
                         <outlet property="dayLabel" destination="sUa-8O-RkV" id="MkO-cS-C3n"/>
                         <outlet property="guestsUIView" destination="Xpv-QG-Rsg" id="u05-Bw-Vdh"/>
                         <outlet property="locationLabel" destination="oBG-HV-LsE" id="DRD-6G-jDP"/>
                         <outlet property="locationUIView" destination="Ccg-aW-PXB" id="sFp-L9-6j6"/>
                         <outlet property="nameLabel" destination="M61-Li-RN2" id="len-Dq-FEm"/>
+                        <outlet property="nameTitleLabel" destination="eLI-Zl-f1K" id="FAp-S0-Q5v"/>
                         <outlet property="nameUIView" destination="uji-qP-MIc" id="XjM-nA-FyO"/>
                         <outlet property="scrollView" destination="u3m-1k-Ghz" id="f6s-tA-efm"/>
-                        <outlet property="suppliesUIView" destination="QPu-aB-7WP" id="tfd-HJ-D07"/>
                         <outlet property="timeLabel" destination="vAc-BG-3NX" id="MlO-9w-Beq"/>
                         <segue destination="BQa-Hb-GXm" kind="modal" identifier="addNameSegue" id="bmo-GI-xlF"/>
                     </connections>

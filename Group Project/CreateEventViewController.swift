@@ -13,6 +13,9 @@ class CreateEventViewController: UIViewController, UIViewControllerTransitioning
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var nameUIView: UIView!
+    
+    
+    @IBOutlet weak var nameTitleLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var locationUIView: UIView!
@@ -26,19 +29,10 @@ class CreateEventViewController: UIViewController, UIViewControllerTransitioning
     
     var isPresenting: Bool = true
     var editingView: UIView!
+    var editingFrame = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var defaults = NSUserDefaults.standardUserDefaults()
-        var newUser = defaults.integerForKey("new_user")
-        
-        if (newUser == 0) {
-            println("not a new user")
-        } else {
-            println("Yes, a new user")
-        }
-        
     }
     
     
@@ -76,6 +70,7 @@ class CreateEventViewController: UIViewController, UIViewControllerTransitioning
                 destinationViewController.nameValue = nameLabel.text!
             }
             
+            editingFrame = 1
             editingView = nameUIView
             
         case "addLocationSegue":
@@ -84,12 +79,15 @@ class CreateEventViewController: UIViewController, UIViewControllerTransitioning
             destinationViewController.transitioningDelegate = self
             destinationViewController.delegate = self
 
+            editingFrame = 2
             editingView = locationUIView
         case "addDateTimeSegue":
             var destinationViewController = segue.destinationViewController as EditDateTimeViewController
             destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
             destinationViewController.transitioningDelegate = self
             destinationViewController.delegate = self
+            
+            editingFrame = 3
             editingView = dateTimeUIView
 
         default:
@@ -109,18 +107,45 @@ class CreateEventViewController: UIViewController, UIViewControllerTransitioning
         
         if (isPresenting) {
             var window = UIApplication.sharedApplication().keyWindow
+            
+            
+            
+            // Start copying source frame
+            
             var thisFrame = window.convertRect(editingView.frame, fromView: scrollView)
             var copyUIView = UIView(frame: thisFrame)
-            copyUIView.backgroundColor = UIColor(red: 255/255, green: 136/255, blue: 77/255, alpha: 0.05)
-
-        
             
+            copyUIView.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
+            
+            if (editingFrame == 1) {
+                var nameTitleLabelCopy = UILabel(frame: nameTitleLabel.frame)
+                nameTitleLabelCopy.text = "Name"
+                nameTitleLabelCopy.textColor = UIColor(red: 50/255, green: 82/255, blue: 110/255, alpha: 1.0)
+                
+                nameTitleLabelCopy.font = UIFont.systemFontOfSize(10.0)
+                
+                
+                var nameLabelCopy = UILabel(frame: nameLabel.frame)
+                
+                nameLabelCopy.text = nameLabel.text
+                
+                
+                copyUIView.addSubview(nameTitleLabelCopy)
+                copyUIView.addSubview(nameLabelCopy)
+            }
+            
+        
+
         /*  
             ADDING Text during transition
             var textFrame = window.convertRect(editingView.frame, fromView: editingView)
             var textLabel = UILabel(frame: textFrame)
             textLabel.text = editingValue[0]
          */
+            
+            
+            
+            
             
             window.addSubview(copyUIView)
             window.backgroundColor = UIColor(white: 0.0, alpha: 1)
@@ -158,6 +183,7 @@ class CreateEventViewController: UIViewController, UIViewControllerTransitioning
                     transitionContext.completeTransition(true)
                     fromViewController.view.removeFromSuperview()
                     copyUIView.removeFromSuperview()
+                    self.editingFrame = 0
                     self.checkStyles()
             }
         }
