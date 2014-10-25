@@ -11,7 +11,6 @@ import UIKit
 class UpcomingEventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-
         var currentEvents = [
             [
                 "title": "OCTOBER",
@@ -33,7 +32,6 @@ class UpcomingEventViewController: UIViewController, UITableViewDelegate, UITabl
                         "detail-date":"Saturday - July 11",
                         "time":"9:00PM",
                         "host":"b_1x"
-
                     ],
                     [
                         "event":"stuff",
@@ -82,8 +80,6 @@ class UpcomingEventViewController: UIViewController, UITableViewDelegate, UITabl
             // Do any additional setup after loading the view.
         }
 
-
-
         func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             let events = currentEvents[section]["events"] as NSArray
             return events.count
@@ -94,7 +90,6 @@ class UpcomingEventViewController: UIViewController, UITableViewDelegate, UITabl
         func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
             var cell = tableView.dequeueReusableCellWithIdentifier("EventCell") as EventCell
-
             let events = currentEvents[indexPath.section]["events"] as Array<Dictionary<String, String>>
             var currentEvent = events[indexPath.row]
             //
@@ -104,7 +99,6 @@ class UpcomingEventViewController: UIViewController, UITableViewDelegate, UITabl
             cell.dateLabel.text = currentEvent["date"]
             cell.timeLabel.text = currentEvent["time"]
             cell.hostAvatar.image = UIImage(named: currentEvent["host"]!)
-
 
             if (cell.responseLabel.text == "Invited"){
                 println("test")
@@ -171,12 +165,10 @@ class UpcomingEventViewController: UIViewController, UITableViewDelegate, UITabl
         }
         /*
         // MARK: - Navigation
-
         // In a storyboard-based application, you will often want to do a little preparation before navigation
         override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         }
         */
-
 }

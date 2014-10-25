@@ -12,7 +12,6 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
 
 
     @IBOutlet weak var tableView: UITableView!
-
         var currentEvents = [
             [
                 "title": "AUGUST",
@@ -34,7 +33,6 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
                         "detail-date":"Saturday - July 11",
                         "time":"9:00PM",
                         "host":"c_1x"
-
                     ],
                     [
                         "event":"stuff",
@@ -82,7 +80,6 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
 
             // Do any additional setup after loading the view.
         }
-
 
         
         func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -179,5 +176,4 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
         // Pass the selected object to the new view controller.
         }
         */
-
 }
