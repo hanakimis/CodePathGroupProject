@@ -12,6 +12,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     //VARS
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchField: UITextField!
+
     
     var results: [NSDictionary] = []
     
@@ -96,18 +98,13 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 84
+        
+        searchField.becomeFirstResponder()
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    
-    
-    @IBAction func onEnteringFriend(sender: AnyObject) {
-        
-        self.results = objects["predictions"] as [NSDictionary]
-        
     }
     
     //TABLE VIEW FUNCTIONS
@@ -118,13 +115,16 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         
-        var cell = tableView.dequeueReusableCellWithIdentifier("ContactsTableViewCell") as ContactsTableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("SearchTableViewCell") as SearchTableViewCell
         
         var user = users[indexPath.row]
         var imageName = user["userImage"] as String!
         
         cell.contactName.text = user["name"]
         cell.contactImage.image = UIImage(named: imageName)
+
+        
+
         
         return cell
         
@@ -139,6 +139,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell!.accessoryType = .Checkmark
         
     }
+    
+    
 
 
 }
