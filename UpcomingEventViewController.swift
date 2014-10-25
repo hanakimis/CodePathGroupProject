@@ -1,30 +1,29 @@
 //
-//  TableViewViewController.swift
+//  UpcomingEventViewController.swift
 //  Group Project
 //
-//  Created by Ida Leung on 10/18/14.
+//  Created by Ida Leung on 10/25/14.
 //  Copyright (c) 2014 Hana-Ida-Jessica. All rights reserved.
 //
 
 import UIKit
 
-class TableViewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class UpcomingEventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
 
         var currentEvents = [
             [
-                "title": "AUGUST",
+                "title": "OCTOBER",
                 "events": [
                     [
-                        "event":"JJ's BBQ",
-                        "address":"Mission",
+                        "event":"Sarah's Babyshower",
+                        "address":"456 Grant Ave",
                         "response":"Yes",
-                        "date":"6/11",
-                        "detail-date":"Sunday - June 11",
+                        "date":"10/14",
+                        "detail-date":"Sunday - October 14",
                         "time":"9:00PM",
-                        "host":"a_1x"
+                        "host":"h_1x"
                     ],
                     [
                         "event":"Snowboarding",
@@ -33,7 +32,7 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
                         "date":"7/11",
                         "detail-date":"Saturday - July 11",
                         "time":"9:00PM",
-                        "host":"c_1x"
+                        "host":"b_1x"
 
                     ],
                     [
@@ -43,12 +42,12 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
                         "date":"8/11",
                         "detail-date":"Monday - August 11",
                         "time":"9:00PM",
-                        "host":"d_1x"
+                        "host":"c_1x"
                     ]
                 ]
             ],
             [
-                "title": "SEPTEMBER",
+                "title": "DECEMBER",
                 "events": [
                     [
                         "event":"Happy hour",
@@ -56,7 +55,7 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
                         "response":"Yes",
                         "date":"6/14",
                         "time":"6:00PM",
-                        "host":"a_1x"
+                        "host":"d_1x"
                     ],
                     [
                         "event":"Shopping",
@@ -64,12 +63,12 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
                         "response":"Invited",
                         "date":"7/14",
                         "time":"2:00PM",
-                        "host":"b_1x"
+                        "host":"e_1x"
                     ]
                 ]
             ]
         ]
-        
+
         override func viewDidLoad() {
             super.viewDidLoad()
 
@@ -84,14 +83,14 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
         }
 
 
-        
+
         func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             let events = currentEvents[section]["events"] as NSArray
             return events.count
             //when link to external file
             //return pastEvents.count
         }
-        
+
         func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
             var cell = tableView.dequeueReusableCellWithIdentifier("EventCell") as EventCell
@@ -115,7 +114,7 @@ class TableViewViewController: UIViewController, UITableViewDelegate, UITableVie
             return cell
 
         }
-        
+
 
         func numberOfSectionsInTableView(tableView: UITableView) -> Int {
             return currentEvents.count
