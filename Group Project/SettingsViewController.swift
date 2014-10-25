@@ -43,10 +43,8 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
 
-
         var defaults = NSUserDefaults.standardUserDefaults()
         var newUser = defaults.integerForKey("new_user")
-
         if (newUser == 0) {
             //LOADING CONFIGURING OF PLACEHOLDERS
             configureNameTextField()
@@ -59,7 +57,6 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
             chelseaInitialsImage.hidden = true
             avatarImage.hidden = true
             initialsImage.hidden = true
-
         } else {
             //LOADING CONFIGURING OF PLACEHOLDERS
             configureNameTextFieldNew()
@@ -107,6 +104,26 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
         nameTextField.attributedPlaceholder = NSAttributedString(string:"John Otis",
             attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
     }
+    
+    func configureEmailTextFieldNew() {
+        emailTextField.attributedPlaceholder = NSAttributedString(string:"johnotis@gmail.com",
+            attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
+    }
+    func configureOldPasswordTextFieldNew() {
+        oldPasswordTextField.attributedPlaceholder = NSAttributedString(string:"Old password",
+            attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
+    }
+    func configureNewPasswordTextFieldNew() {
+        newPasswordTextField.attributedPlaceholder = NSAttributedString(string:"New password",
+            attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
+    }
+    func configureConfirmPasswordTextFieldNew() {
+        confirmPasswordTextField.attributedPlaceholder = NSAttributedString(string:"Confirm password",
+            attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
+        
+    }
+
+
 
     func configureEmailTextFieldNew() {
         emailTextField.attributedPlaceholder = NSAttributedString(string:"johnotis@gmail.com",
@@ -140,7 +157,6 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
         //imagePickerController.sourceType = UIImagePickerControllerSourceType.Camera
         imagePickerController.delegate = self
         self.presentViewController(imagePickerController, animated: true, completion: nil)
-
         removePhotoButton.enabled = true
     }
 
@@ -148,7 +164,6 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
     
         var tempImage:UIImage = info[UIImagePickerControllerOriginalImage] as UIImage
         libraryImage.image = tempImage
-
         libraryImage.hidden = false
         
         picker.dismissViewControllerAnimated(true, completion: nil)
@@ -221,9 +236,7 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
             self.confirmPasswordTextField.text = ""
         })
 
-
     }
-
 
     //DELAY FUNCTION
     func delay(delay:Double, closure:()->()) {
@@ -235,8 +248,5 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
             dispatch_get_main_queue(), closure)
     }
 
-
-
-    
 
 }
