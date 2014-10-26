@@ -20,11 +20,12 @@ class EditDateTimeViewController: UIViewController, TimeInDayViewControllerDeleg
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var selectedTabIndicator: UIImageView!
     
     var delegate: EditDateTimeViewControllerDelegate?
     var dayViewController: DayViewController!
     var timeViewController: TimeInDayViewController!
-    var currentTab = 0
+    var currentTab = 1
     
     var tabViewControllers = [UIViewController]()
     
@@ -77,9 +78,19 @@ class EditDateTimeViewController: UIViewController, TimeInDayViewControllerDeleg
         tabViewControllers[tab].didMoveToParentViewController(self)
         
         if (tab == 1) {
-            // animate the position of the selected tab
+            UIView.animateWithDuration(0.4, animations: { () -> Void in
+                self.selectedTabIndicator.frame.origin.x = 174.0
+                
+                }) { (finished: Bool) -> Void in
+ 
+            }
         } else {
-            // animate the position of the selected tab
+            UIView.animateWithDuration(0.4, animations: { () -> Void in
+                self.selectedTabIndicator.frame.origin.x = 8.0
+                
+                }) { (finished: Bool) -> Void in
+                    
+            }
         }
     }
     
