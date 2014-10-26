@@ -48,33 +48,35 @@ class TimeInDayViewController: UIViewController {
             
             var pointY = point.y
             
+           
+            
             if (pointY >= 40) && (pointY <= 370) {
                 hourSelectorView.frame.origin.y = point.y
             }            
             
-            if (pointY <= 70) {
+            if (pointY <= 52) {
                 hourLabel.text = "01"
-            } else if (70 < pointY) && (pointY <= 100) {
+            } else if (52 < pointY) && (pointY <= 82) {
                 hourLabel.text = "02"
-            } else if (100 < pointY) && (pointY <= 130) {
+            } else if (82 < pointY) && (pointY <= 112) {
                 hourLabel.text = "03"
-            } else if (130 < pointY) && (pointY <= 160) {
+            } else if (112 < pointY) && (pointY <= 142) {
                 hourLabel.text = "04"
-            } else if (160 < pointY) && (pointY <= 190) {
+            } else if (142 < pointY) && (pointY <= 172) {
                 hourLabel.text = "05"
-            } else if (190 < pointY) && (pointY <= 220) {
+            } else if (172 < pointY) && (pointY <= 202) {
                 hourLabel.text = "06"
-            } else if (220 < pointY) && (pointY <= 250) {
+            } else if (202 < pointY) && (pointY <= 232) {
                 hourLabel.text = "07"
-            } else if (250 < pointY) && (pointY <= 280) {
+            } else if (232 < pointY) && (pointY <= 262) {
                 hourLabel.text = "08"
-            } else if (280 < pointY) && (pointY <= 310) {
+            } else if (262 < pointY) && (pointY <= 292) {
                 hourLabel.text = "09"
-            } else if (310 < pointY) && (pointY <= 340) {
+            } else if (292 < pointY) && (pointY <= 322) {
                 hourLabel.text = "10"
-            } else if (340 < pointY) && (pointY <= 370) {
+            } else if (322 < pointY) && (pointY <= 352) {
                 hourLabel.text = "11"
-            } else if (pointY >= 370) {
+            } else if (pointY >= 352) {
                 hourLabel.text = "12"
             }
             
@@ -102,31 +104,33 @@ class TimeInDayViewController: UIViewController {
             
             if (pointY >= 40) && (pointY <= 370) {
                 minuteSelectorView.frame.origin.y = point.y
+                
+                 println("\(pointY)")
             }
                 
-            if (pointY <= 70) {
+            if (pointY <= 52) {
                 minuteLabel.text = "00"
-            } else if (70 < pointY) && (pointY <= 100) {
+            } else if (52 < pointY) && (pointY <= 82) {
                 minuteLabel.text = "05"
-            } else if (100 < pointY) && (pointY <= 130) {
+            } else if (82 < pointY) && (pointY <= 112) {
                 minuteLabel.text = "10"
-            } else if (130 < pointY) && (pointY <= 160) {
+            } else if (112 < pointY) && (pointY <= 142) {
                 minuteLabel.text = "15"
-            } else if (160 < pointY) && (pointY <= 190) {
+            } else if (142 < pointY) && (pointY <= 172) {
                 minuteLabel.text = "20"
-            } else if (190 < pointY) && (pointY <= 220) {
+            } else if (172 < pointY) && (pointY <= 202) {
                 minuteLabel.text = "25"
-            } else if (220 < pointY) && (pointY <= 250) {
+            } else if (202 < pointY) && (pointY <= 232) {
                 minuteLabel.text = "30"
-            } else if (250 < pointY) && (pointY <= 280) {
+            } else if (232 < pointY) && (pointY <= 262) {
                 minuteLabel.text = "35"
-            } else if (280 < pointY) && (pointY <= 310) {
+            } else if (262 < pointY) && (pointY <= 292) {
                 minuteLabel.text = "40"
-            } else if (310 < pointY) && (pointY <= 340) {
+            } else if (292 < pointY) && (pointY <= 322) {
                 minuteLabel.text = "45"
-            } else if (340 < pointY) && (pointY <= 370) {
+            } else if (322 < pointY) && (pointY <= 352) {
                 minuteLabel.text = "50"
-            } else if (pointY >= 370) {
+            } else if (pointY >= 352) {
                 minuteLabel.text = "55"
             }
             
