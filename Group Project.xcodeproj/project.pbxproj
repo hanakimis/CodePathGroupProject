@@ -33,8 +33,6 @@
 		80AB88BD19DBB21B0082367C /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB88BC19DBB21B0082367C /* CreateAccountViewController.swift */; };
 		80AB88BF19DBB31D0082367C /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB88BE19DBB31D0082367C /* CreateEventViewController.swift */; };
 		80BB61FC19F4CDC300EDA4AE /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BB61FB19F4CDC300EDA4AE /* EventViewController.swift */; };
-		80CB752C19F330F0006516C6 /* SuppliesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CB752B19F330F0006516C6 /* SuppliesViewController.swift */; };
-		80CB752E19F33472006516C6 /* SuppliesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CB752D19F33472006516C6 /* SuppliesCell.swift */; };
 		AFA6A7D519F03F0E00E81508 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6A7D419F03F0E00E81508 /* NewUserViewController.swift */; };
 		AFB3858C19F07BF30031CA5E /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB3858B19F07BF30031CA5E /* EventTableViewCell.swift */; };
 		AFB3858E19F07C590031CA5E /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB3858D19F07C590031CA5E /* EventCell.swift */; };
@@ -88,8 +86,6 @@
 		80AB88BC19DBB21B0082367C /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		80AB88BE19DBB31D0082367C /* CreateEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		80BB61FB19F4CDC300EDA4AE /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
-		80CB752B19F330F0006516C6 /* SuppliesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuppliesViewController.swift; sourceTree = "<group>"; };
-		80CB752D19F33472006516C6 /* SuppliesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuppliesCell.swift; sourceTree = "<group>"; };
 		AFA6A7D419F03F0E00E81508 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		AFB3858B19F07BF30031CA5E /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		AFB3858D19F07C590031CA5E /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
@@ -181,8 +177,6 @@
 				80246B9D19F4E51800BD6261 /* LocationCell.swift */,
 				803B27FD19F393F10045C0F4 /* EditNameViewController.swift */,
 				803B280319F46E990045C0F4 /* EditDateTimeViewController.swift */,
-				80CB752B19F330F0006516C6 /* SuppliesViewController.swift */,
-				80CB752D19F33472006516C6 /* SuppliesCell.swift */,
 				AFB3858D19F07C590031CA5E /* EventCell.swift */,
 				AFB3858B19F07BF30031CA5E /* EventTableViewCell.swift */,
 				80A68E5A19D15FB700D34365 /* Images.xcassets */,
@@ -324,7 +318,6 @@
 				803B280619F46ED00045C0F4 /* EditLocationViewController.swift in Sources */,
 				803B281519F48C670045C0F4 /* DateUtil.m in Sources */,
 				80BB61FC19F4CDC300EDA4AE /* EventViewController.swift in Sources */,
-				80CB752C19F330F0006516C6 /* SuppliesViewController.swift in Sources */,
 				AFB3858C19F07BF30031CA5E /* EventTableViewCell.swift in Sources */,
 				803B27FE19F393F10045C0F4 /* EditNameViewController.swift in Sources */,
 				80246B9E19F4E51800BD6261 /* LocationCell.swift in Sources */,
@@ -345,7 +338,6 @@
 				AFA6A7D519F03F0E00E81508 /* NewUserViewController.swift in Sources */,
 				803B280419F46E990045C0F4 /* EditDateTimeViewController.swift in Sources */,
 				80895C3119F5120100998F5C /* TimeInDayViewController.swift in Sources */,
-				80CB752E19F33472006516C6 /* SuppliesCell.swift in Sources */,
 				611F178419EE197000DAEC15 /* SettingsViewController.swift in Sources */,
 				803B281719F48C670045C0F4 /* SACalendar.m in Sources */,
 			);
