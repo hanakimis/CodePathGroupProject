@@ -29,13 +29,38 @@ class CreateEventViewController: UIViewController, UIViewControllerTransitioning
     
     @IBOutlet weak var guestsUIView: UIView!
     @IBOutlet weak var addGuestsButton: UIButton!
+    @IBOutlet weak var invitedView: UIView!
     
     var isPresenting: Bool = true
     var editingView: UIView!
     var editingFrame = 0
+    var showInvitedView = 0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
+        println("view did load")
+    
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        
+        if showInvitedView > 0 {
+            
+            invitedView.hidden = false
+            
+        } else {
+            
+            invitedView.hidden = true
+            
+        }
+        
+        println("view did appear")
+        
     }
     
     
@@ -92,6 +117,7 @@ class CreateEventViewController: UIViewController, UIViewControllerTransitioning
             
             editingFrame = 3
             editingView = dateTimeUIView
+            
 
         default:
             println("I... am not ready for this segue: \(segue.identifier)")
@@ -291,4 +317,27 @@ class CreateEventViewController: UIViewController, UIViewControllerTransitioning
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    
+    //ADDING CONTACTS
+    @IBAction func onAddGuestsButton(sender: AnyObject) {
+        
+        showInvitedView += 1
+        
+    }
+    
+    //DELAY FUNCTION
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
+    }
+
+    
+    
+    
+    
 }

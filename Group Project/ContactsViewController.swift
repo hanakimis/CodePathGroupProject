@@ -97,6 +97,9 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.rowHeight = 84
         
         
+        
+        
+        
 
     }
     
