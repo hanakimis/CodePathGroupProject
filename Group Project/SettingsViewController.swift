@@ -162,10 +162,27 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
     @IBAction func onRemoveImage(sender: AnyObject) {
 
 
-        chelseaImage.hidden = true
-        libraryImage.hidden = true
-        chelseaInitialsImage.hidden = false
-        removePhotoButton.enabled = false
+        var defaults = NSUserDefaults.standardUserDefaults()
+        var newUser = defaults.integerForKey("new_user")
+        if (newUser == 0) {
+            //EXISTING USER
+            chelseaImage.hidden = true
+            libraryImage.hidden = true
+            avatarImage.hidden = true
+            initialsImage.hidden = true
+            chelseaInitialsImage.hidden = false
+            removePhotoButton.enabled = false
+        } else {
+            //NEW USER
+            chelseaImage.hidden = true
+            libraryImage.hidden = true
+            avatarImage.hidden = true
+            initialsImage.hidden = false
+            chelseaInitialsImage.hidden = true
+            removePhotoButton.enabled = true
+
+        }
+
 
 
     }
