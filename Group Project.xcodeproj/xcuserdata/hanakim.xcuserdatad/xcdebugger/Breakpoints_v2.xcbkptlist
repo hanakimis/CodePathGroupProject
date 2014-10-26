@@ -15,7 +15,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
             endingLineNumber = "96"
-            landmarkName = "keyboardWillHide(_:)"
+            landmarkName = "configureConfirmPasswordTextField()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
