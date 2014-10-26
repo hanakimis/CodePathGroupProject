@@ -125,23 +125,6 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
 
 
 
-    func configureEmailTextFieldNew() {
-        emailTextField.attributedPlaceholder = NSAttributedString(string:"johnotis@gmail.com",
-            attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
-    }
-    func configureOldPasswordTextFieldNew() {
-        oldPasswordTextField.attributedPlaceholder = NSAttributedString(string:"Old password",
-            attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
-    }
-    func configureNewPasswordTextFieldNew() {
-        newPasswordTextField.attributedPlaceholder = NSAttributedString(string:"New password",
-            attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
-    }
-    func configureConfirmPasswordTextFieldNew() {
-        confirmPasswordTextField.attributedPlaceholder = NSAttributedString(string:"Confirm password",
-            attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
-
-    }
 
 
 
