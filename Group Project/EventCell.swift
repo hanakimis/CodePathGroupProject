@@ -16,6 +16,7 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var hostAvatar: UIImageView!
+    @IBOutlet weak var hostBox: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
