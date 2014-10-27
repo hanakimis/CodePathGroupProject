@@ -151,17 +151,24 @@ class UpcomingEventsViewController: UIViewController, UITableViewDelegate, UITab
         return 30
     }
 
+    
+    @IBAction func onAddEvent(sender: AnyObject) {
+        performSegueWithIdentifier("AddEventSegue", sender: self)
+    }
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        var eventViewController = segue.destinationViewController as EventViewController
-        let indexPath = self.tableView.indexPathForSelectedRow()!
+        if segue.identifier == "DetailEventSegue"{
+            var eventViewController = segue.destinationViewController as EventViewController
+            let indexPath = self.tableView.indexPathForSelectedRow()!
 
+            // 1. figure out which event was pressed
+            let eventsInSection = currentEvents[indexPath.section]["events"] as Array<Dictionary<String, String>>
+            let event = eventsInSection[indexPath.row]
 
-        // 1. figure out which event was pressed
-        let eventsInSection = currentEvents[indexPath.section]["events"] as Array<Dictionary<String, String>>
-        let event = eventsInSection[indexPath.row]
+            // 2. hand it to  eventViewController
+            eventViewController.detailEvent = event
 
-        // 2. hand it to  eventViewController
-        eventViewController.detailEvent = event
+        }
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

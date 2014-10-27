@@ -157,7 +157,7 @@
                                             <outlet property="hostBox" destination="HfA-sh-8Q3" id="9kb-bO-mUA"/>
                                             <outlet property="responseLabel" destination="Ixf-rv-Kda" id="qVy-Y8-IYA"/>
                                             <outlet property="timeLabel" destination="bOw-1x-Vs6" id="STE-QF-XVI"/>
-                                            <segue destination="NDg-xU-c0a" kind="push" id="8fa-mW-q7r"/>
+                                            <segue destination="NDg-xU-c0a" kind="push" identifier="DetailEventSegue" id="8fa-mW-q7r"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -180,7 +180,8 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="LeP-Mt-JRp" kind="modal" id="00h-gf-g7D"/>
+                                    <action selector="onAddEvent:" destination="53h-UQ-AzM" eventType="touchUpInside" id="1Xb-s7-Ffz"/>
+                                    <segue destination="LeP-Mt-JRp" kind="modal" identifier="AddEventSegue" id="00h-gf-g7D"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -2049,7 +2050,7 @@
         <image name="chelsea" width="60" height="60"/>
         <image name="chelsea-initials" width="60" height="60"/>
         <image name="circle-cover" width="70" height="70"/>
-        <image name="d_1x" width="30" height="30"/>
+        <image name="d_1x" width="60" height="60"/>
         <image name="empty_upcoming" width="320" height="568"/>
         <image name="f_1x" width="30" height="30"/>
         <image name="gather-logo" width="152" height="60"/>
@@ -2072,6 +2073,6 @@
         <segue reference="6gH-kD-jDx"/>
         <segue reference="tCG-dz-IMv"/>
         <segue reference="iPx-Zf-dCz"/>
-        <segue reference="00h-gf-g7D"/>
+        <segue reference="OAp-MS-v9B"/>
     </inferredMetricsTieBreakers>
 </document>
