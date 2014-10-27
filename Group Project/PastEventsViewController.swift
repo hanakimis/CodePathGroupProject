@@ -145,7 +145,7 @@ class PastEventsViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        var eventViewController = segue.destinationViewController as EventViewController
+        var eventViewController = segue.destinationViewController as PastDetailEventViewController
         let indexPath = self.tableView.indexPathForSelectedRow()!
         
         
