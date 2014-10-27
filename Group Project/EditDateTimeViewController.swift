@@ -42,7 +42,7 @@ class EditDateTimeViewController: UIViewController, TimeInDayViewControllerDeleg
         dayButton.tag = 0
         timeButton.tag = 1
         
-        selectTab(1)
+        selectTab(currentTab)
     }
 
     func returnWithTime(returnTime:String) {

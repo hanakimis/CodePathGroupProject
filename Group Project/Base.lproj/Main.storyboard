@@ -2110,10 +2110,6 @@
                                     <outletCollection property="gestureRecognizers" destination="SVE-Vk-29E" appends="YES" id="n9d-4v-FEw"/>
                                 </connections>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="luo-l1-SW9">
-                                <rect key="frame" x="244" y="13" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

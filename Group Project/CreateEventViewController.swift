@@ -90,6 +90,15 @@ class CreateEventViewController: UIViewController, UIViewControllerTransitioning
             destinationViewController.transitioningDelegate = self
             destinationViewController.delegate = self
             
+            var tapGesture = sender as UITapGestureRecognizer
+            var point = tapGesture.locationInView(view)
+            
+            if (point.x < 153.0) {
+                destinationViewController.currentTab = 0
+            } else {
+                destinationViewController.currentTab = 1
+            }
+            
             editingFrame = 3
             editingView = dateTimeUIView
 
