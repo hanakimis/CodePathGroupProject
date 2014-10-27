@@ -36,6 +36,9 @@
 		AFA6A7D519F03F0E00E81508 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6A7D419F03F0E00E81508 /* NewUserViewController.swift */; };
 		AFB3858C19F07BF30031CA5E /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB3858B19F07BF30031CA5E /* EventTableViewCell.swift */; };
 		AFB3858E19F07C590031CA5E /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB3858D19F07C590031CA5E /* EventCell.swift */; };
+		AFB4294A19FD79EE00B37F71 /* UpcomingEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB4294919FD79EE00B37F71 /* UpcomingEventsViewController.swift */; };
+		AFB4294C19FDA98F00B37F71 /* PastEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB4294B19FDA98F00B37F71 /* PastEventsViewController.swift */; };
+		AFB4294E19FDBAC100B37F71 /* PastDetailEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB4294D19FDBAC100B37F71 /* PastDetailEventViewController.swift */; };
 		AFCA6E0319F2FD11008F3861 /* TableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCA6E0219F2FD11008F3861 /* TableViewViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +92,9 @@
 		AFA6A7D419F03F0E00E81508 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		AFB3858B19F07BF30031CA5E /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		AFB3858D19F07C590031CA5E /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		AFB4294919FD79EE00B37F71 /* UpcomingEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingEventsViewController.swift; sourceTree = "<group>"; };
+		AFB4294B19FDA98F00B37F71 /* PastEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastEventsViewController.swift; sourceTree = "<group>"; };
+		AFB4294D19FDBAC100B37F71 /* PastDetailEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastDetailEventViewController.swift; sourceTree = "<group>"; };
 		AFCA6E0219F2FD11008F3861 /* TableViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewViewController.swift; path = ../TableViewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,6 +168,9 @@
 				80A68E5319D15FB700D34365 /* AppDelegate.swift */,
 				80A68E5519D15FB700D34365 /* ViewController.swift */,
 				80A68E5719D15FB700D34365 /* Main.storyboard */,
+				AFB4294D19FDBAC100B37F71 /* PastDetailEventViewController.swift */,
+				AFB4294B19FDA98F00B37F71 /* PastEventsViewController.swift */,
+				AFB4294919FD79EE00B37F71 /* UpcomingEventsViewController.swift */,
 				6183733B19F7706200ED1C93 /* SearchViewController.swift */,
 				6183733D19F7726400ED1C93 /* SearchTableViewCell.swift */,
 				6178899819F60138001A9167 /* ContactsTableViewCell.swift */,
@@ -320,6 +329,7 @@
 				80BB61FC19F4CDC300EDA4AE /* EventViewController.swift in Sources */,
 				AFB3858C19F07BF30031CA5E /* EventTableViewCell.swift in Sources */,
 				803B27FE19F393F10045C0F4 /* EditNameViewController.swift in Sources */,
+				AFB4294E19FDBAC100B37F71 /* PastDetailEventViewController.swift in Sources */,
 				80246B9E19F4E51800BD6261 /* LocationCell.swift in Sources */,
 				80AB88BD19DBB21B0082367C /* CreateAccountViewController.swift in Sources */,
 				6183733C19F7706200ED1C93 /* SearchViewController.swift in Sources */,
@@ -329,6 +339,7 @@
 				611F178619EE2B5A00DAEC15 /* ContactsViewController.swift in Sources */,
 				80A68E5619D15FB700D34365 /* ViewController.swift in Sources */,
 				6178899919F60138001A9167 /* ContactsTableViewCell.swift in Sources */,
+				AFB4294A19FD79EE00B37F71 /* UpcomingEventsViewController.swift in Sources */,
 				80A68E5419D15FB700D34365 /* AppDelegate.swift in Sources */,
 				803B281A19F48CDE0045C0F4 /* DayViewController.swift in Sources */,
 				803B281619F48C670045C0F4 /* DMLazyScrollView.m in Sources */,
