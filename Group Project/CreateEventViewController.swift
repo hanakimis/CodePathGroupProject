@@ -310,6 +310,14 @@ class CreateEventViewController: UIViewController, UIViewControllerTransitioning
         if (locationLabel.text != "Search event location") {
             locationLabel.textColor = UIColor(white: 0.2, alpha: 1.0)
         }
+        
+        if (dayTitleLabel.text != "Select day") {
+            dayTitleLabel.textColor = UIColor(white: 0.2, alpha: 1.0)
+        }
+        
+        if (timeLabel.text != "Specify time") {
+            timeLabel.textColor = UIColor(white: 0.2, alpha: 1.0)
+        }
     }
     
     func animationControllerForPresentedController(presented: UIViewController!, presentingController presenting: UIViewController!, sourceController source: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
