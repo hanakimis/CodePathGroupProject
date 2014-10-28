@@ -39,28 +39,26 @@ class CreateEventViewController: UIViewController, UIViewControllerTransitioning
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
         println("view did load")
-
-
+    
+        
     }
-
+    
     override func viewDidAppear(animated: Bool) {
-
-
+        
+        
         if showInvitedView > 0 {
-
+            
             invitedView.hidden = false
-
+            
         } else {
-
+            
             invitedView.hidden = true
-
+            
         }
-
+        
         println("view did appear")
-
+        
     }
     
     
@@ -126,6 +124,7 @@ class CreateEventViewController: UIViewController, UIViewControllerTransitioning
             
             editingFrame = 3
             editingView = dateTimeUIView
+            
 
 
         default:
@@ -326,15 +325,14 @@ class CreateEventViewController: UIViewController, UIViewControllerTransitioning
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-
+    
     //ADDING CONTACTS
     @IBAction func onAddGuestsButton(sender: AnyObject) {
-
+        
         showInvitedView += 1
-
+        
     }
-
+    
     //DELAY FUNCTION
     func delay(delay:Double, closure:()->()) {
         dispatch_after(
@@ -344,9 +342,5 @@ class CreateEventViewController: UIViewController, UIViewControllerTransitioning
             ),
             dispatch_get_main_queue(), closure)
     }
-
-
-
-
 
 }

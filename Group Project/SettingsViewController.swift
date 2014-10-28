@@ -161,7 +161,7 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
     //REMOVE IMAGE
     @IBAction func onRemoveImage(sender: AnyObject) {
 
-
+        
         var defaults = NSUserDefaults.standardUserDefaults()
         var newUser = defaults.integerForKey("new_user")
         if (newUser == 0) {
@@ -180,8 +180,9 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
             initialsImage.hidden = false
             chelseaInitialsImage.hidden = true
             removePhotoButton.enabled = true
-
+            
         }
+
 
 
 

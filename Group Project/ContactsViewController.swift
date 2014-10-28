@@ -97,6 +97,9 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.rowHeight = 84
         
         
+        
+        
+        
 
 
 
@@ -106,7 +109,18 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     
     //TABLE VIEW FUNCTIONS
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        var defaults = NSUserDefaults.standardUserDefaults()
+        var newUser = defaults.integerForKey("new_user")
+        if (newUser == 0) {
+            //existing user
+            return users.count
+
+        } else {
+            //New user
+            return 0
+ 
+        }
+
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -134,6 +148,13 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
 
+    
+    
+    @IBAction func onAddToEventButton(sender: AnyObject) {
+        
+        dismissViewControllerAnimated(true, completion: nil)
+        
+    }
     
 
     @IBAction func onAddToEventButton(sender: AnyObject) {
