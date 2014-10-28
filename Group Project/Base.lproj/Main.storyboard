@@ -1095,6 +1095,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="onCancelButton:" destination="F8u-Vu-9ZC" eventType="touchUpInside" id="eHr-9H-11L"/>
                                     <action selector="onTapBackButton:" destination="LeP-Mt-JRp" eventType="touchUpInside" id="Mdc-oR-mrI"/>
                                 </connections>
                             </button>
@@ -1115,6 +1116,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="onFindFriendsButton:" destination="F8u-Vu-9ZC" eventType="touchUpInside" id="CUO-RG-rVP"/>
                                     <segue destination="8NH-eq-u18" kind="modal" modalTransitionStyle="crossDissolve" id="EYo-3l-NMk"/>
                                 </connections>
                             </button>
@@ -1141,7 +1143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5NG-it-zMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="957" y="2460"/>
+            <point key="canvasLocation" x="892" y="2485"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="f4q-oo-Xyv">
@@ -1185,6 +1187,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="onCancelButton:" destination="8NH-eq-u18" eventType="touchUpInside" id="kay-lj-fZ6"/>
                                     <action selector="tapCancelButton:" destination="cgh-vs-bJh" eventType="touchUpInside" id="mqc-fG-Hqa"/>
                                 </connections>
                             </button>
@@ -1242,7 +1245,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="krz-xZ-5Ta" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="949" y="3158"/>
+            <point key="canvasLocation" x="892" y="3261"/>
         </scene>
         <!--New User View Controller-->
         <scene sceneID="Bra-0X-lCm">
