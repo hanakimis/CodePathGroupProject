@@ -100,5 +100,10 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
 
+    @IBAction func onCancelButton(sender: AnyObject) {
+        
+        dismissViewControllerAnimated(true, completion: nil)
+        
+    }
 
 }

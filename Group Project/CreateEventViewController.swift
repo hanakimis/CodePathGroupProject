@@ -40,6 +40,7 @@ class CreateEventViewController: UIViewController, UIViewControllerTransitioning
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        invitedView.hidden = true
 
         println("view did load")
 
