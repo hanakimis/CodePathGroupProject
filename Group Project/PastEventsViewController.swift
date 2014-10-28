@@ -11,7 +11,6 @@ import UIKit
 class PastEventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var emptyPast: UIImageView!
 
     var currentEvents = [
         [
@@ -80,7 +79,7 @@ class PastEventsViewController: UIViewController, UITableViewDelegate, UITableVi
         // 1 is new, 0 is existing
         if ( newUser == 1 ) {
             tableView.hidden = true
-            emptyPast.alpha = 1
+//            emptyPast.alpha = 1
             println("new")
         } else {
             println("easdfasdfasdfxisitng")

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="F8u-Vu-9ZC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -742,10 +742,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="588"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <imageView key="tableFooterView" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_upcoming" id="l1p-B4-57K">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="EventCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="EventCell" rowHeight="78" id="xdd-qh-ndH" customClass="EventCell" customModule="Group_Project" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -816,7 +812,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Past Events" id="fdH-LB-ewr"/>
                     <connections>
-                        <outlet property="emptyPast" destination="l1p-B4-57K" id="gCu-WA-zg5"/>
                         <outlet property="tableView" destination="gea-lg-795" id="emX-Q6-mWW"/>
                     </connections>
                 </viewController>
@@ -866,7 +861,7 @@
         <!--Settings-->
         <scene sceneID="o9V-y5-SQU">
             <objects>
-                <viewController id="SvG-CH-Mub" customClass="SettingsViewController" customModule="Group_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="SvG-CH-Mub" customClass="SettingsViewController" customModule="Group_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H41-mb-Drz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1132,7 +1127,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onAddToEventButton:" destination="F8u-Vu-9ZC" eventType="touchUpInside" id="afe-c9-MqG"/>
+                                    <action selector="onAddToEventButtonNew:" destination="F8u-Vu-9ZC" eventType="touchUpInside" id="KIn-EX-NMV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2041,12 +2036,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="a_1x" width="30" height="30"/>
+        <image name="a_1x" width="60" height="60"/>
         <image name="aaron" width="60" height="60"/>
         <image name="alek" width="60" height="60"/>
         <image name="anna" width="60" height="60"/>
-        <image name="b_1x" width="30" height="30"/>
-        <image name="c_1x" width="30" height="30"/>
+        <image name="b_1x" width="60" height="60"/>
+        <image name="c_1x" width="60" height="60"/>
         <image name="chelsea" width="60" height="60"/>
         <image name="chelsea-initials" width="60" height="60"/>
         <image name="circle-cover" width="70" height="70"/>
@@ -2071,8 +2066,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="6gH-kD-jDx"/>
-        <segue reference="tCG-dz-IMv"/>
-        <segue reference="iPx-Zf-dCz"/>
-        <segue reference="OAp-MS-v9B"/>
+        <segue reference="00h-gf-g7D"/>
+        <segue reference="hQN-xV-IJh"/>
     </inferredMetricsTieBreakers>
 </document>

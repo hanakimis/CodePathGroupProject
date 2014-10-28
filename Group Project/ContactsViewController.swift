@@ -146,7 +146,12 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     
-
+    
+    @IBAction func onAddToEventButtonNew(sender: AnyObject) {
+        
+        dismissViewControllerAnimated(true, completion: nil)
+        
+    }
 
 
     
