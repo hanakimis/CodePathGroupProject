@@ -130,14 +130,19 @@ class CreateAccountViewController: UIViewController {
         } else {
             
             var create2AlertView = UIAlertView(title: "Creating account...", message: nil, delegate: nil, cancelButtonTitle: nil)
+            
+        
             create2AlertView.show()
 
             delay(2, closure: { () -> () in
+                
+                self.performSegueWithIdentifier("CreateAccountToTabBarSegue", sender: nil)
                 var defaults = NSUserDefaults.standardUserDefaults()
                 defaults.setInteger(1, forKey: "new_user")
                 defaults.synchronize()
                 create2AlertView.dismissWithClickedButtonIndex(0, animated: true)
-                self.performSegueWithIdentifier("CreateAccountToTabBarSegue", sender: nil)
+
+                
             })
 
 
