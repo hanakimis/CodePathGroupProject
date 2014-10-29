@@ -169,13 +169,13 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    @IBAction func onFindFriendsButton(sender: AnyObject) {
-
-        fakeUserCount = 15
-
-        tableView.reloadData()
-
-    }
+//    @IBAction func onFindFriendsButton(sender: AnyObject) {
+//
+//        fakeUserCount = 15
+//
+//        tableView.reloadData()
+//
+//    }
 
     @IBAction func onFindFriendsButton(sender: AnyObject) {
 

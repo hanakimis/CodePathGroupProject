@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="xQr-ni-0bY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -186,7 +186,6 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="emptyIntro" destination="Lcd-gE-tzs" id="dWY-Yl-848"/>
                         <outlet property="tableView" destination="7qT-bZ-cnW" id="zPf-y8-65o"/>
@@ -555,6 +554,10 @@
                                             <color key="titleColor" red="1" green="0.53333333329999999" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onTapDone:" destination="LeP-Mt-JRp" eventType="touchUpInside" id="0Xf-Pv-uDI"/>
+                                            <segue destination="53h-UQ-AzM" kind="modal" identifier="addEventToListSegue" id="b9j-fy-E09"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96794627359999996" green="0.96253875249999998" blue="0.97335379460000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -2078,8 +2081,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="iPx-Zf-dCz"/>
-        <segue reference="OAp-MS-v9B"/>
-        <segue reference="tCG-dz-IMv"/>
+        <segue reference="hQN-xV-IJh"/>
+        <segue reference="b9j-fy-E09"/>
+        <segue reference="00h-gf-g7D"/>
+        <segue reference="6gH-kD-jDx"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,6 +12,7 @@ class UpcomingEventsViewController: UIViewController, UITableViewDelegate, UITab
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyIntro: UIImageView!
+    var loadCount = 0
 
     var currentEvents = [
         [
@@ -66,6 +67,15 @@ class UpcomingEventsViewController: UIViewController, UITableViewDelegate, UITab
                     "detail-date":"Sunday - December 21",
                     "time":"2:00pm",
                     "host":"e_1x"
+                ],
+                [
+                    "event":"Dinner with Paloma",
+                    "address":"Ragazza",
+                    "response":"Host",
+                    "date":"12/23",
+                    "detail-date":"Tuesday – December 23",
+                    "time":"6:30PM",
+                    "host":"h_1x"
                 ]
             ]
         ]
@@ -154,6 +164,7 @@ class UpcomingEventsViewController: UIViewController, UITableViewDelegate, UITab
     
     @IBAction func onAddEvent(sender: AnyObject) {
         performSegueWithIdentifier("AddEventSegue", sender: self)
+        self.loadCount += 1
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
@@ -174,6 +185,13 @@ class UpcomingEventsViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        if loadCount > 0 {
+            println("1")
+        }
+        }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

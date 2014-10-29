@@ -66,6 +66,9 @@ class CreateEventViewController: UIViewController, UIViewControllerTransitioning
 
     }
     
+    @IBAction func onTapDone(sender: UIButton) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     
     @IBAction func onTapForEdit(sender: AnyObject) {
         performSegueWithIdentifier("addNameSegue", sender: self)
