@@ -14,6 +14,7 @@ class NewUserViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var intro_3: UIImageView!
     @IBOutlet weak var intro_2: UIImageView!
     @IBOutlet weak var intro_1: UIImageView!
+    @IBOutlet weak var partyBallon: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class NewUserViewController: UIViewController, UIScrollViewDelegate {
 
         println("test")
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,6 +36,13 @@ class NewUserViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(scrollView: UIScrollView!) {
         // Get the current page based on the scroll offset
         var page : Int = Int(round(scrollView.contentOffset.x / 320))
+        
+        if (page == 2) {
+            UIImageView.animateWithDuration(0.5){self.partyBallon.alpha = 1}
+            UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.Autoreverse | UIViewAnimationOptions.Repeat, animations: { () -> Void in
+                self.partyBallon.transform = CGAffineTransformMakeTranslation(0, 5)
+                }, completion: nil)
+        }
 
         // Set the current page, so the dots will update
         //pageControl.currentPage = page

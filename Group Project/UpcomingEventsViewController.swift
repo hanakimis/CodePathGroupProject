@@ -139,8 +139,8 @@ class UpcomingEventsViewController: UIViewController, UITableViewDelegate, UITab
         //add label
         var label = UILabel(frame: headerView.frame)
         label.text = currentEvents[section]["title"] as String?
-        label.font = UIFont.boldSystemFontOfSize(14)
-        label.textColor = UIColor(red: 0.992, green: 0.502, blue: 0.137, alpha: 1)
+        label.font = UIFont.boldSystemFontOfSize(13)
+        label.textColor = UIColor(red: 1, green: 0.533, blue: 0.027, alpha: 1)
         headerView.addSubview(label)
 
         return headerView
