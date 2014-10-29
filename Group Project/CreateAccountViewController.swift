@@ -136,7 +136,7 @@ class CreateAccountViewController: UIViewController {
 
             delay(2, closure: { () -> () in
                 
-                self.performSegueWithIdentifier("CreateAccountToTabBarSegue", sender: nil)
+                self.performSegueWithIdentifier("CreateAccountToUserWalkthrough", sender: nil)
                 var defaults = NSUserDefaults.standardUserDefaults()
                 defaults.setInteger(1, forKey: "new_user")
                 defaults.synchronize()

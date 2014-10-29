@@ -14,6 +14,7 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     
     //VARS
     @IBOutlet weak var tableView: UITableView!
+    var fakeUserCount = 14
     
     var users = [
         [
@@ -86,6 +87,11 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
             "userImage":"wes",
             "email":"wesdearborn@gmail.com"
         ],
+        [
+            "name":"Ashley Hawkins",
+            "userImage":"ashley",
+            "email":"ashleyhawkins@gmail.com"
+        ],
     ]
     
     
@@ -110,7 +116,7 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
         var newUser = defaults.integerForKey("new_user")
         if (newUser == 0) {
             //existing user
-            return users.count
+            return fakeUserCount
 
         } else {
             //New user
@@ -153,10 +159,22 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
 
+    @IBAction func onCancelButton(sender: AnyObject) {
+        
+        dismissViewControllerAnimated(true, completion: nil)
+        
+    }
 
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    @IBAction func onFindFriendsButton(sender: AnyObject) {
+        
+        fakeUserCount = 15
+        
+        tableView.reloadData()
+        
     }
 
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="xQr-ni-0bY">
     <dependencies>
         <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -648,7 +648,6 @@
                                         </state>
                                         <connections>
                                             <action selector="onCreateAccountButton:" destination="z1A-Rf-xBo" eventType="touchUpInside" id="J6k-BY-pTj"/>
-                                            <segue destination="Uln-Bk-0FV" kind="modal" identifier="CreateAccountToTabBarSegue" id="AJX-1s-SoV"/>
                                         </connections>
                                     </button>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="gather-logo" id="dgC-3C-G0c">
@@ -693,6 +692,7 @@
                         <outlet property="nameTextField" destination="4ob-8n-OMR" id="pyN-cV-Isl"/>
                         <outlet property="passwordTextField" destination="XFy-Y4-AzD" id="fon-4l-orT"/>
                         <outlet property="scrollView" destination="P25-hn-dxs" id="glc-5Z-KHP"/>
+                        <segue destination="Uln-Bk-0FV" kind="modal" identifier="CreateAccountToUserWalkthrough" id="4hq-JQ-Pjr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fz-yk-lLN" sceneMemberID="firstResponder"/>
@@ -1085,7 +1085,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="P25-g1-PzF">
-                                <rect key="frame" x="11" y="19" width="42" height="28"/>
+                                <rect key="frame" x="7" y="19" width="42" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="Cancel">
@@ -1093,7 +1093,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onTapBackButton:" destination="LeP-Mt-JRp" eventType="touchUpInside" id="Mdc-oR-mrI"/>
+                                    <action selector="onCancelButton:" destination="F8u-Vu-9ZC" eventType="touchUpInside" id="wcy-Az-F3k"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bzS-Mh-XSK">
@@ -1104,7 +1104,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fil-wl-K6w">
-                                <rect key="frame" x="237" y="18" width="77" height="28"/>
+                                <rect key="frame" x="236" y="18" width="77" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="Add to event">
@@ -1125,6 +1125,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="onFindFriendsButton:" destination="F8u-Vu-9ZC" eventType="touchUpInside" id="pfG-qE-aGo"/>
                                     <segue destination="8NH-eq-u18" kind="modal" modalTransitionStyle="crossDissolve" id="EYo-3l-NMk"/>
                                 </connections>
                             </button>
@@ -1168,7 +1169,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Wpj-EY-kz8">
-                                <rect key="frame" x="8" y="19" width="42" height="28"/>
+                                <rect key="frame" x="7" y="19" width="42" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="Cancel">
@@ -1176,6 +1177,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="onCancelButton:" destination="8NH-eq-u18" eventType="touchUpInside" id="frb-cl-iPb"/>
                                     <action selector="tapCancelButton:" destination="cgh-vs-bJh" eventType="touchUpInside" id="mqc-fG-Hqa"/>
                                 </connections>
                             </button>
@@ -1224,7 +1226,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iDL-Ng-q1T">
-                                <rect key="frame" x="280" y="17" width="32" height="28"/>
+                                <rect key="frame" x="280" y="19" width="32" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="Done">
@@ -2076,8 +2078,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="6gH-kD-jDx"/>
-        <segue reference="00h-gf-g7D"/>
-        <segue reference="hQN-xV-IJh"/>
+        <segue reference="iPx-Zf-dCz"/>
+        <segue reference="OAp-MS-v9B"/>
+        <segue reference="tCG-dz-IMv"/>
     </inferredMetricsTieBreakers>
 </document>

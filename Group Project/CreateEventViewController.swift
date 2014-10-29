@@ -42,6 +42,8 @@ class CreateEventViewController: UIViewController, UIViewControllerTransitioning
 
 
         println("view did load")
+        
+        invitedView.hidden = true
 
 
     }
